@@ -22,7 +22,10 @@ URL:
 - 어떤 문제를 풀 것인지
 
 ## Methodology
+### 4. Square root marginalization
+Hessian matrix의 landmark - landmark sparsity를 위해 marginalized될 landmark의 active window 안에 있는 observation을 그냥 drop함.
 
+nullspace projection을 사용하는데 frame variable한테는 이게 optimal 하지 않다. 그래서 두 차례에 걸쳐서 사용할 예정임.
 
 ## Experiments
 - 어떤 데이터
