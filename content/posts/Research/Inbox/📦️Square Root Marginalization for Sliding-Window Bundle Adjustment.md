@@ -6,7 +6,11 @@ draft: true
 URL:
 ---
 ## KeyIdea
+- landmark 지우기 using null-space projection
+- marginalization prior를 저장하기 위해 Hessian에 square root를 씌움.
+- old pose들을 marginalization할 때, *specialised QR decomposition*을 이용해 square root prior를 update함.
 
+→ baseline보다 36% 빠르고, pseudo inverse jacobian을 다룸.
 
 ## Critique
 - 얻어갈 것
