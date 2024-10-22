@@ -3,6 +3,8 @@ ref :
 ### sudo 안 붙이고 docker 실행하기
 `sudo chmod 666 /var/run/docker.sock` 
 ## nvidia-docker2 설치
+이걸 설치해야 내 로컬에 있는 gpu를 사용할 수가 있음.
+대신에 로컬에서 nvidia-driver를 미리 설치해야함.
 
 ref : [tstory 블로그](https://d-ontory.tistory.com/8)
 ```sh
@@ -67,3 +69,10 @@ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
 | 실행되고 있던 컨테이너 접속 (터미널 분할해서 동시 사용) | docker exec -it 컨테이너 /bin/bash |     |
 | 컨테이너 빠져나오기                       | exit                           |     |
 | 이미지 확인                           | docker images                  |     |
+
+
+# DockerFile 만들기
+내가 도커 이미지의 컨테이너에서 작업을 하다가 새로운 의존성을 설치하게 될 경우, 이를 업데이트 하는 방식은 두 가지가 있다. : DockerFile 수정, Docker commit
+
+Docker commit의 경우 해당 container를 끄기 전에 현재 상태를 이미지로 저장하는 방식이다. 하지만 남들과 공유를 하거나 유지 관리를 하기에 부적절한 것 같아서 DockerFile 만드는 방식으로 하려고 한다.
+
