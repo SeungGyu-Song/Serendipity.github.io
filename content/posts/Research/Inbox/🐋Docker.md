@@ -1,7 +1,8 @@
 # Docker 설치
 ref : 
 
-
+### sudo 안 붙이고 docker 실행하기
+`sudo chmod 666 /var/run/docker.sock` 
 # Docker 명령어 
 
 ```txt
@@ -27,3 +28,4 @@ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
 `docker run -d -p 1234:6379 redis`
 - detached mode로 실행하기 위해 -d 옵션 추가.
 - 컨테이너의 포트를 호스트의 포트로 연결하기 위해 -p 옵션 추가, 호스트의 1234 포트를 컨테이너의 6379 포트로 연결.
+- 
