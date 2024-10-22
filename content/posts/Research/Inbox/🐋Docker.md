@@ -76,3 +76,17 @@ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
 
 Docker commit의 경우 해당 container를 끄기 전에 현재 상태를 이미지로 저장하는 방식이다. 하지만 남들과 공유를 하거나 유지 관리를 하기에 부적절한 것 같아서 DockerFile 만드는 방식으로 하려고 한다.
 
+```Docker
+FROM pytorch/pytorch:2.5.0-cuda11.8-cudnn9-devel
+
+MAINTAINER snggu@kaist.ac.kr
+
+RUN apt-get -y -qq update && \
+
+pip install numpy matplotlib librosa
+
+WORKDIR /root/snggu
+
+COPY . /root/snggu
+```
+
