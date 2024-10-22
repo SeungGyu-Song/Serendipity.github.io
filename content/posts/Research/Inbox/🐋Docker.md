@@ -56,7 +56,7 @@ docker run -itd --name pytorch -v /home/snggu/:/root/snggu -p 8888:8888 --gpus a
 	- 여기서는 로컬의 /home/snggu 디렉토리를 도커 컨테이너의 /root/snggu로 연결해주었음.
 	- 따라서 내 컴퓨터의 /home/snggu에 파일을 넣어주면 도커 컨테이너에서 /root/snggu에서 해당 파일을 사용할 수가 있게 됨.
 - `--restart=always` 옵션은 도커가 재실행 될 때 해당 컨테이너가 같이 실행되는 거.
-	- 필요 없을 듯.
+	- 
 - 
 
 | 수행                               | 명령어                            |     |
@@ -72,6 +72,9 @@ docker run -itd --name pytorch -v /home/snggu/:/root/snggu -p 8888:8888 --gpus a
 | 실행되고 있던 컨테이너 접속 (터미널 분할해서 동시 사용) | docker exec -it 컨테이너 /bin/bash |     |
 | 컨테이너 빠져나오기                       | exit                           |     |
 | 이미지 확인                           | docker images                  |     |
+| doker 재시작                        | sudo systemctl restart docker  |     |
+|                                  |                                |     |
+
 
 
 # DockerFile 만들기
