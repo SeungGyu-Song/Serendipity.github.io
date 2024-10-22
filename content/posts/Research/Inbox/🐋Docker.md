@@ -44,6 +44,16 @@ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
 - detached mode로 실행하기 위해 -d 옵션 추가.
 - 컨테이너의 포트를 호스트의 포트로 연결하기 위해 -p 옵션 추가, 호스트의 1234 포트를 컨테이너의 6379 포트로 연결.
 
+`docker run -itd --name pytorch -v /home/snggu/:/root/snggu -p 8888:8888 --gpus all --restart=always pytorch/pytorch`
+
+- `-v` 옵션은 로컬 호스트와 도커 컨테이너 사이에 공유 디렉토리를 연결해주는 옵션
+	- 내 로컬 디렉토리를 써주면 된다.
+	- 여기서는 로컬의 /home/snggu 디렉토리를 도커 컨테이너의 /root/snggu로 연결해주었음.
+	- 따라서 내 컴퓨터의 /home/snggu에 파일을 넣어주면 도커 컨테이너에서 /root/snggu에서 해당 파일을 사용할 수가 있게 됨.
+- `--restart=always` 옵션은 도커가 재실행 될 때 해당 컨테이너가 같이 실행되는 거.
+	- 필요 없을 듯.
+- 
+
 | 수행                               | 명령어                            |     |
 | -------------------------------- | ------------------------------ | --- |
 | 실행중인 컨테이너 목록 확인                  | docker ps -a                   |     |
