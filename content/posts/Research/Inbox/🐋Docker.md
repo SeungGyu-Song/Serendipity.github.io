@@ -44,13 +44,16 @@ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
 - detached mode로 실행하기 위해 -d 옵션 추가.
 - 컨테이너의 포트를 호스트의 포트로 연결하기 위해 -p 옵션 추가, 호스트의 1234 포트를 컨테이너의 6379 포트로 연결.
 
-| 수행                | 명령어                    |     |
-| ----------------- | ---------------------- | --- |
-| 실행중인 컨테이너 목록 확인   | docker ps -a           |     |
-| 전체 컨테이너 목록 확인     | docker container ls -a |     |
-| 컨테이너 시작           | docker start 컨테이너 ID   |     |
-| 컨테이너 접속           | docker attach 컨테이너 ID  |     |
-| 컨테이너 멈춤           | docker stop 컨테이너 ID    |     |
-| 컨테이너 생성 및 시작      | docker run 컨테이너  ID    |     |
-| 컨테이너 생성 및 시작 및 접속 | docker run -it 컨테이너 ID |     |
-|                   |                        |     |
+| 수행                               | 명령어                            |     |
+| -------------------------------- | ------------------------------ | --- |
+| 실행중인 컨테이너 목록 확인                  | docker ps -a                   |     |
+| 전체 컨테이너 목록 확인                    | docker container ls -a         |     |
+| 컨테이너 시작                          | docker start 컨테이너 ID           |     |
+| 컨테이너 접속                          | docker attach 컨테이너 ID          |     |
+| 컨테이너 멈춤                          | docker stop 컨테이너 ID            |     |
+| 컨테이너 생성 및 시작                     | docker run 컨테이너  ID            |     |
+| 컨테이너 생성 및 시작 및 접속                | docker run -it 컨테이너 ID         |     |
+| 컨테이너 삭제                          | docker rm 컨테이너 ID              |     |
+| 실행되고 있던 컨테이너 접속 (터미널 분할해서 동시 사용) | docker exec -it 컨테이너 /bin/bash |     |
+| 컨테이너 빠져나오기                       | exit                           |     |
+| 이미지 확인                           | docker images                  |     |
