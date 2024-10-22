@@ -46,7 +46,10 @@ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
 - detached mode로 실행하기 위해 -d 옵션 추가.
 - 컨테이너의 포트를 호스트의 포트로 연결하기 위해 -p 옵션 추가, 호스트의 1234 포트를 컨테이너의 6379 포트로 연결.
 
-`docker run -itd --name pytorch -v /home/snggu/:/root/snggu -p 8888:8888 --gpus all --restart=always pytorch/pytorch`
+```docker
+docker run -itd --name pytorch -v /home/snggu/:/root/snggu -p 8888:8888 --gpus all --restart=always pytorch/pytorch
+```
+
 
 - `-v` 옵션은 로컬 호스트와 도커 컨테이너 사이에 공유 디렉토리를 연결해주는 옵션
 	- 내 로컬 디렉토리를 써주면 된다.
