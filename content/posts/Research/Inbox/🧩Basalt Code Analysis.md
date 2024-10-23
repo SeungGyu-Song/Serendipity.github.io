@@ -88,8 +88,29 @@ patch 크기에 따라 PatchT 변수 선언
 ⚠️ `calib.intrinsics.size()`는 camera 개수를 의미함.
 ##### 함수가 처음 돌아갈 때 초기화 해주는 작업
 `transforms.reset(new` [[#OpticalFlowResult]]`)`
+transforms의 observation 초기화, 시간(`t_ns`) 초기화 
+
 `pyramid.reset(new std::vector<`[[#ManagedImagePyr|basalt::ManagedImagPyr]]`<uint16_t>>)`
 `pyramid->at(i).`[[#setFromImage]](* new_img_vec→ img_data[i].img, config.optical_flow_levels) 함수를 통해 pyramid 구성
+
+[[#addPoints]]
+[[#filterPoints]]
+
+
+##### 함수가 처음 말고 그 이후로 돌아갈 때
+1. 전 pyramid를 old로 바꾸고
+2. [[#trackPoints]]함수로 opticalFlow가 [[#addPoints]], [[#filterPoints]] 이전에 들어가는 것만 다름.
+3. 
+`old_pyramid = pyramid`
+
+`pyramid.reset(new std::vector<`[[#ManagedImagePyr|basalt::ManagedImagPyr]]`<uint16_t>>)`
+`pyramid->at(i).`[[#setFromImage]](* new_img_vec→ img_data[i].img, config.optical_flow_levels) 함수를 통해 pyramid 구성
+
+[[#OpticalFlowResult]]::Ptr new_transforms
+`new_transforms.reset(new` [[#OpticalFlowResult]]`)`
+transforms의 observation 초기화, 시간(`t_ns`) 초기화 
+
+카메라 개수만큼 [[#trackPoints]](`old_pyramid->at(i), pyramid->at(i), transforms->observations[i], new_transforms->observations[i])
 
 
 ### OpticalFlowResult
@@ -103,7 +124,7 @@ struct이고 `using KeypointId = size_t`
 - std::vector<[[#ImageData]]> img_data
 
 ### ManagedImagePyr
-이거는 thirdparty 파일 안에 있음 
+이거는 thirdparty 디렉토리 안 image_pyr.h 파일 안에 있음 
 대충 imagepyr를 만든다고 생각하자.
 
 ### ImageData
