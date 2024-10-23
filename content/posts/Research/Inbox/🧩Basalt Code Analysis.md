@@ -74,6 +74,9 @@ config에서 optical_flow_type을
 ex ) `res.reset(new PatchOpticalFlow<float, Pattern24>(config, cam))`
 
 ### PatchOpticalFlow
+#### Constructor
+patch 크기에 따라 PatchT 변수 선언
+`T_i_j`는 j번째→i번째 transform이니까 1번→2번 
 
 
 
