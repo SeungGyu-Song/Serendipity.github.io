@@ -51,8 +51,9 @@ imu의 acc, gyr covariance를 받아오고, 각각의 bias와 scale값을 받아
 ##### while (true)
 `vision_data_queue.pop(current_frame)` : optical flow의 결과를 뽑아옴.
 
-data = [[#popFromImuDataQueue]]
-
+- data = [[#popFromImuDataQueue]]
+- 중력과 imu의 acc를 기준으로 world와 body의 초기 회전관계를 정의함 → static 상황을 가정하는 건가?
+- 
 
 ###### popFromImuDataQueue
 imu_data_queue에서 최근 거를 빼서 [[#ImuData]]에 저장함.
