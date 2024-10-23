@@ -36,18 +36,17 @@ return [[#factory_helper]](float)(config, cam, g, use_imu)
 ### SqrtKeypointVioEstimator 
 <span style="color: brown">public <span style="color: blue">VioEstimatorBase, </span>public <span style="color: blue">SqrtBundleAdjustmentBase(Scalar_)</span></span>
 
-#### initialize 
-<span style="color:green">const Eigen::Vector3d& <span style="color:purple">bg_</span>, const Eigen::Vector3d& <span style="color:purple">ba_</span></span>
-
-
-
-### Constructor
+#### Constructor
 - config파일에서 option 값 불러오기.
 - config에서 vio_sqrt_marg == true로 하면
 	- marg_data에 들어가는 값들에 sqrt를 씌워줘서 넣어준다.
 
-### initialize
+#### initialize
 <span style="color:green">const Eigen::Vector3d<span style="color:purple">& bg_</span>, const Eigen::Vector3d<span style="color:purple">& ba_</span></span>
+
+Thread에 넣어줌 : `processing_thread.reset(new std::thread(proc_func))`
+
+- imu의 acc, gyr covariance를 받아오고, calibrated된 값 받아오기.
 
 
 ## OpticalFlowBase
