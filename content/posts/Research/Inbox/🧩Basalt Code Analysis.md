@@ -114,6 +114,13 @@ transforms의 observation 초기화, 시간(`t_ns`) 초기화
 
 카메라 개수만큼 [[#trackPoints]](`old_pyramid->at(i), pyramid->at(i), transforms->observations[i], new_transforms->observations[i])
 
+[[#addPoints]]
+[[#filterPoints]]로 오른쪽 카메라의 feature를 왼쪽과 Epipolar geometry error 기준으로 삭제
+
+1. output_queue 가 존재하고,
+2. `frame_counter % config.optical_flow_skip_frames ==0` 
+→ `output_queue->push(transforms)`
+
 #### filterPoints
 ⚠️ 카메라 개수가 1개면 return을 해벌임;;
 
