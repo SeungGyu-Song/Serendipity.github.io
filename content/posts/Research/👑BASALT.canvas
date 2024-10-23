@@ -1,7 +1,7 @@
 {
 	"nodes":[
 		{"id":"67eb4a08deedd196","type":"text","text":"#### [[🧩Basalt Code Analysis#getVioEstimator|VioEstimatorFactory::getVioEstimator]]\n","x":-320,"y":-340,"width":271,"height":73},
-		{"id":"0a384a653ff50e98","type":"text","text":"#### [[🍯 shared_ptr 축약어 꿀팁]]","x":277,"y":-803,"width":323,"height":63},
+		{"id":"0a384a653ff50e98","type":"text","text":"#### [[🍯 shared_ptr 축약어 꿀팁]]","x":277,"y":-803,"width":363,"height":63},
 		{"id":"5942c5bca9d7ebc6","type":"text","text":"#### [[🧩Basalt Code Analysis#basalt#factory_helper|VioEsimatorBase::factory_helper]]\n","x":-320,"y":-120,"width":271,"height":81},
 		{"id":"88c51c7e2f964193","type":"text","text":"#### [[🧩Basalt Code Analysis#initialize|SqrtKeyPointVioEsimator::initialize]]","x":-397,"y":80,"width":425,"height":68},
 		{"id":"969322d6d043be67","type":"text","text":"#### [[🧩Basalt Code Analysis#getOpticalFlow|OpticalFlowFactory::getOpticalFlow]]\n","x":-414,"y":-600,"width":460,"height":71},
