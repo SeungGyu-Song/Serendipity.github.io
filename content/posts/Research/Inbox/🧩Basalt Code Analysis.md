@@ -79,7 +79,7 @@ patch 크기에 따라 PatchT 변수 선언
 `T_i_j`는 j번째→i번째 transform이니까 오른쪽→왼쪽 카메라 변환
 그래서 Essential matrix `E` 구함.
 
-##### ProcessingLoop
+#### ProcessingLoop
 이거 Thread임.
 [[#processFrame]] (input_ptr→t_ns, input_ptr)호출
 
@@ -96,7 +96,9 @@ transforms의 observation 초기화, 시간(`t_ns`) 초기화
 [[#addPoints]]
 [[#filterPoints]]
 
-
+1. output_queue 가 존재하고,
+2. `frame_counter % config.optical_flow_skip_frames ==0` 
+→ `output_queue->push(transforms)`
 ##### 함수가 처음 말고 그 이후로 돌아갈 때
 1. 전 pyramid를 old로 바꾸고
 2. [[#trackPoints]]함수로 opticalFlow가 [[#addPoints]], [[#filterPoints]] 이전에 들어가는 것만 다름.
@@ -111,6 +113,12 @@ transforms의 observation 초기화, 시간(`t_ns`) 초기화
 transforms의 observation 초기화, 시간(`t_ns`) 초기화 
 
 카메라 개수만큼 [[#trackPoints]](`old_pyramid->at(i), pyramid->at(i), transforms->observations[i], new_transforms->observations[i])
+
+#### filterPoints
+⚠️ 카메라 개수가 1개면 return을 해벌임;;
+
+오른쪽에 있는 feature(`transforms->observations.at(1)`)가 왼쪽에도 있는지 확인
+
 
 
 ### OpticalFlowResult
