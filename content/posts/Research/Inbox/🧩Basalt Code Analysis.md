@@ -86,9 +86,10 @@ patch 크기에 따라 PatchT 변수 선언
 #### processFrame
 <span style="color:green"> int64_t <span style="color:purple">curr_t_ns</span> OpticalFlowInput::Ptr<span style="color:purple"> &new_img_vec</span></span>
 ⚠️ `calib.intrinsics.size()`는 camera 개수를 의미함.
+##### 함수가 처음 돌아갈 때 초기화 해주는 작업
 `transforms.reset(new` [[#OpticalFlowResult]]`)`
 `pyramid.reset(new std::vector<`[[#ManagedImagePyr|basalt::ManagedImagPyr]]`<uint16_t>>)`
-
+`pyramid->at(i).`[[#setFromImage]](* new_img_vec→ img_data[i].img, config.optical_flow_levels) 함수를 통해 pyramid 구성
 
 
 ### OpticalFlowResult
@@ -97,7 +98,21 @@ struct이고 `using KeypointId = size_t`
 `std::vector<std::map<KeypointId, size_t>>` pyramid_levels
 `OpticalFlowInput::Ptr` input_images
 
+### OpticalFlowInput
+- int64_t t_ns
+- std::vector<[[#ImageData]]> img_data
 
 ### ManagedImagePyr
 이거는 thirdparty 파일 안에 있음 
 대충 imagepyr를 만든다고 생각하자.
+
+### ImageData
+이건 io파일 안에 있음
+- [[#ManagedImage]]<uint16_t>::Ptr img
+- double exposure
+
+
+
+# Pangolin
+### ManagedImage
+<span style="color: brown">public <span style="color: blue"> Image</span></span> <T> 
