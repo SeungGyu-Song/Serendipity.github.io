@@ -19,6 +19,14 @@ information matrix의 rank가 full rank가 아닌 경우를 under-determined sys
 
 damping factor를 Hessian matrix $\mathbf{H}$에 추가해줌으로써 $\lambda \mathbf{I}$ 가 system을 positive-definite을 만들어줌. ($\mathbf{I}$가 full rank라서)
 
+
+## $(\mathbf{H}+\lambda\mathbf{I})\Delta x = -b$의 의미
+
+$-b = - \mathbf{J}^T \Omega r$이다. (r은 residual function)
+이 의미가 
+1. information matrix $\Omega$ : residual을 가중치만큼 scaling 
+2. $\mathbf{J}^T$ : 가중치가 곱해진 residual을 new parameter가 존재할 새로운 공간으로 mapping하는 것.
+
 ## ❓️Questions
 왜 근데 damping factor를 추가해서 rank-deficient한 상황을 해결할 수 있었을까?
 
@@ -28,6 +36,7 @@ damping factor를 Hessian matrix $\mathbf{H}$에 추가해줌으로써 $\lambda 
 [[🧩VINS-Fusion Map.canvas|🧩VINS-Fusion Map]]
 [[📦️BASALT]]
 [[📦️Square Root Marginalization for Sliding-Window Bundle Adjustment]]
+[[📦️Is  Levenberg-Marquardt the Most Efficient Optimization Algorithm for Implementing Bundle Adjustment?]]
 
 $$
 \mathrm{rank}(J^TJ) = \mathrm{rank}(J^T)=\mathrm{rank}(J)
