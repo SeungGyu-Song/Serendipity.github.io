@@ -94,7 +94,7 @@ transforms의 observation 초기화, 시간(`t_ns`) 초기화
 `pyramid->at(i).`[[#setFromImage]](* new_img_vec→ img_data[i].img, config.optical_flow_levels) 함수를 통해 pyramid 구성
 
 [[#addPoints]]
-[[#filterPoints]]
+[[#filterPoints]]로 오른쪽 카메라의 feature를 왼쪽과 Epipolar geometry error 기준으로 삭제
 
 1. output_queue 가 존재하고,
 2. `frame_counter % config.optical_flow_skip_frames ==0` 
@@ -102,7 +102,7 @@ transforms의 observation 초기화, 시간(`t_ns`) 초기화
 ##### 함수가 처음 말고 그 이후로 돌아갈 때
 1. 전 pyramid를 old로 바꾸고
 2. [[#trackPoints]]함수로 opticalFlow가 [[#addPoints]], [[#filterPoints]] 이전에 들어가는 것만 다름.
-3. 
+
 `old_pyramid = pyramid`
 
 `pyramid.reset(new std::vector<`[[#ManagedImagePyr|basalt::ManagedImagPyr]]`<uint16_t>>)`
@@ -117,10 +117,26 @@ transforms의 observation 초기화, 시간(`t_ns`) 초기화
 #### filterPoints
 ⚠️ 카메라 개수가 1개면 return을 해벌임;;
 
-오른쪽에 있는 feature(`transforms->observations.at(1)`)가 왼쪽에도 있는지 확인
+- 오른쪽에 있는 feature(`transforms->observations.at(1)`)가 왼쪽에도 있는지 확인
+	- 만약 없으면
+	- `proj0`에 해당 좌표 넣기
+	- `proj1`에 해당 좌표 넣기
+	- `kpid`에 해당 keypoint 넣기
 
+- `calib.intrinsics[0].`[[#unproject]] `(proj0, p3d0, p3d0_success)`
+- `calib.intrinsics[1].`[[#unproject]] `(proj1, p3d1, p3d1_success)`
 
+- for loop : `p3d_success.size()` 
+	- `p3d0, p3d1`모두 success인 것중에
+		- 초기화 때 구했던 `E`(왼쪽-오른쪽 카메라 간 Essential Matrix)로 error 확인
+			- `epipolar_error` =  $p_1^T E p_0$
+		- `epipolar_error`가 config에서 설정한 `optical_flow_epipolar_error`보다 크면 `lm_to_remove.emplace(kpid[i])`
+	- `p3d0, p3d1`둘 중 하나라도  success가 아니면
+		- `lm_to_remove.emplace(kpid[i])`
 
+`lm_to_remove`에 있는 keypoint들을 `transforms->observations.at(1).erase(id)`로 오른쪽 observation에서 삭제.
+
+그럼 일단 왼쪽에서 뽑힌 거는 그냥 true에 가까운 meausrement라고 생각하는 거네
 ### OpticalFlowResult
 struct이고 `using KeypointId = size_t` 
 `std::vector<Eigen::alinged_map<KeypointId, Eigen::AffineCompact2f>>` observations
