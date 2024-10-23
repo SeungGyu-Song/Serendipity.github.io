@@ -81,8 +81,18 @@ patch 크기에 따라 PatchT 변수 선언
 
 ##### ProcessingLoop
 이거 Thread임.
-[[#processFrame]]
+[[#processFrame]] (input_ptr→t_ns, input_ptr)호출
+
+#### processFrame
+<span style="color:green"> int64_t <span style="color:purple">curr_t_ns</span> OpticalFlowInput::Ptr<span style="color:purple"> &new_img_vec</span></span>
+
+`transforms.reset(new` [[#OpticalFlowResult]]`)`
+`pyramid.reset(new std::vector<`[[]]
 
 
 
-
+### OpticalFlowResult
+struct이고 `using KeypointId = size_t` 
+`std::vector<Eigen::alinged_map<KeypointId, Eigen::AffineCompact2f>>` observations
+`std::vector<std::map<KeypointId, size_t>>` pyramid_levels
+`OpticalFlowInput::Ptr` input_images
