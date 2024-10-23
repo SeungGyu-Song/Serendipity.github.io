@@ -9,7 +9,7 @@ URL: https://jinyongjeong.github.io/2017/02/26/lec14_Least_square_SLAM_landmark/
 ref : 
 - [정진용님 블로그](https://www.youtube.com/watch?v=I8wCohCAS60)
 - [김태영님 블로그](https://www.youtube.com/watch?v=I8wCohCAS60)
-- 유튜브
+- [유튜브-SpatialKR](https://www.youtube.com/watch?v=I8wCohCAS60)
 
 ### Under-determined System
 information matrix의 rank가 full rank가 아닌 경우를 under-determined system이라 하며, 우리의 state에서 일부만 unique solution으로 해를 얻을 수 있따.
@@ -28,3 +28,6 @@ information matrix의 rank가 full rank가 아닌 경우를 under-determined sys
 [[📦️BASALT]]
 [[📦️Square Root Marginalization for Sliding-Window Bundle Adjustment]]
 
+$$
+\mathrm{rank}(J^TJ) = \mathrm{rank}(J^T)=\mathrm{rank}(J)
+$$
