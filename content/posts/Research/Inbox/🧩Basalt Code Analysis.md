@@ -1,7 +1,7 @@
 # basalt
 ### feed_images
 [[#OpticalFlowBase]]의 객체가 뽑아 쓸 queue에 이미지를 넣어주는 역할
-
+`opt_flow_ptr->intput_queue.push(data)`
 ## VioEstimatorBase
 
 ### Constructor
@@ -76,7 +76,12 @@ ex ) `res.reset(new PatchOpticalFlow<float, Pattern24>(config, cam))`
 ### PatchOpticalFlow
 #### Constructor
 patch 크기에 따라 PatchT 변수 선언
-`T_i_j`는 j번째→i번째 transform이니까 1번→2번 
+`T_i_j`는 j번째→i번째 transform이니까 오른쪽→왼쪽 카메라 변환
+그래서 Essential matrix `E` 구함.
+
+##### ProcessingLoop
+이거 Thread임.
+[[#processFrame]]
 
 
 
