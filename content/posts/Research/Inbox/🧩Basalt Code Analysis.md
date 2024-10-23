@@ -85,9 +85,9 @@ patch 크기에 따라 PatchT 변수 선언
 
 #### processFrame
 <span style="color:green"> int64_t <span style="color:purple">curr_t_ns</span> OpticalFlowInput::Ptr<span style="color:purple"> &new_img_vec</span></span>
-
+⚠️ `calib.intrinsics.size()`는 camera 개수를 의미함.
 `transforms.reset(new` [[#OpticalFlowResult]]`)`
-`pyramid.reset(new std::vector<`[[]]
+`pyramid.reset(new std::vector<`[[#ManagedImagePyr|basalt::ManagedImagPyr]]`<uint16_t>>)`
 
 
 
@@ -96,3 +96,8 @@ struct이고 `using KeypointId = size_t`
 `std::vector<Eigen::alinged_map<KeypointId, Eigen::AffineCompact2f>>` observations
 `std::vector<std::map<KeypointId, size_t>>` pyramid_levels
 `OpticalFlowInput::Ptr` input_images
+
+
+### ManagedImagePyr
+이거는 thirdparty 파일 안에 있음 
+대충 imagepyr를 만든다고 생각하자.
