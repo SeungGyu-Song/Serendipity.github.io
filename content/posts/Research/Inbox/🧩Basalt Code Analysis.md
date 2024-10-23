@@ -33,8 +33,13 @@ use_double에 따라
 return [[#factory_helper]](float)(config, cam, g, use_imu)
 `return factory_helper<double>(config, cam, g, use_imu);`
 
-### SqrtKeypointVioEstimator
+### SqrtKeypointVioEstimator 
 <span style="color: brown">public <span style="color: blue">VioEstimatorBase, </span>public <span style="color: blue">SqrtBundleAdjustmentBase(Scalar_)</span></span>
+
+#### initialize 
+<span style="color:green">const Eigen::Vector3d& <span style="color:purple">bg_</span>, const Eigen::Vector3d& <span style="color:purple">ba_</span></span>
+
+
 
 ### Constructor
 - config파일에서 option 값 불러오기.
