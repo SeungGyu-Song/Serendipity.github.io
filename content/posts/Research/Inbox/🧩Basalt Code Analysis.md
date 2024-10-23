@@ -46,7 +46,11 @@ return [[#factory_helper]](float)(config, cam, g, use_imu)
 
 Thread에 넣어줌 : `processing_thread.reset(new std::thread(proc_func))`
 
-- imu의 acc, gyr covariance를 받아오고, 각각의 bias와 scale값을 받아옴.\
+imu의 acc, gyr covariance를 받아오고, 각각의 bias와 scale값을 받아옴.
+- 따라서 결국 raw_measurement + scale * raw_measurement - bias 값을 가져옴.
+##### while (true)
+`vision_data_queue.pop(current_frame)` : optical flow의 결과를 뽑아옴.
+
 
 
 ## OpticalFlowBase
