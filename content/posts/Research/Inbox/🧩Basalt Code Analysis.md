@@ -6,7 +6,7 @@
 
 ### Constructor
 
-### factory_helper
+#### factory_helper
 <span style="color:green">const VioConfig<span style="color: purple">& config</span>, const Calibration(double)<span style="color: purple">& cam</span>, const Eigen::Vector3d<span style="color: purple">& g</span> bool<span style="color: purple"> use_imu</span></span>
 return <span style="color: red"> VioEstimatorBase::Ptr </span>
 
@@ -22,8 +22,8 @@ res.reset(new SqrtKeypointVoEstimator<Scalar>(cam, config));
 
 }
 ```
-## VioEstimatorFactory
-### getVioEstimator
+### VioEstimatorFactory
+#### getVioEstimator
 결국 [[#SqrtKeypointVioEstimator]]를 불러오는 거.
 
 <span style="color: green">const VioConfig<span style="color: purple">& config</span>, const Calibration(double)<span style="color: purple">& cam</span>, const Eigen::Vector3d<span style="color: purple">& g</span>, bool<span style="color: purple"> use_imu</span>, bool<span style="color: purple"> use_double</span> </span>
@@ -33,7 +33,7 @@ use_double에 따라
 return [[#factory_helper]](float)(config, cam, g, use_imu)
 `return factory_helper<double>(config, cam, g, use_imu);`
 
-## SqrtKeypointVioEstimator
+### SqrtKeypointVioEstimator
 <span style="color: brown">public <span style="color: blue">VioEstimatorBase, </span>public <span style="color: blue">SqrtBundleAdjustmentBase(Scalar_)</span></span>
 
 ### Constructor
@@ -58,6 +58,8 @@ config에서 optical_flow_type을
 으로 했냐에 따라  맞는 객체를 return해줌.
 
 ex ) `res.reset(new PatchOpticalFlow<float, Pattern24>(config, cam))`
+
+### PatchOpticalFlow
 
 
 
