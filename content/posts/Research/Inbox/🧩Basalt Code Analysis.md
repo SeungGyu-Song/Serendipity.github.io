@@ -51,7 +51,12 @@ imu의 acc, gyr covariance를 받아오고, 각각의 bias와 scale값을 받아
 ##### while (true)
 `vision_data_queue.pop(current_frame)` : optical flow의 결과를 뽑아옴.
 
+data = [[#popFromImuDataQueue]]
 
+
+###### popFromImuDataQueue
+imu_data_queue에서 최근 거를 빼서 [[#ImuData]]에 저장함.
+이 때, 우리가 사용하는 floating point가 double이면 그냥 뱉어주고, 아니면 float으로 cast를 통해 바꿔서 뱉어줌.
 
 ## OpticalFlowBase
 ### getOpticalFlow
