@@ -9,6 +9,7 @@ tags:
 | EuRoC           |                                     |                      |          |                                                                            |       |                                  |                                                                       |
 | UrbanNavDataset | Stereo/ Velodyne LiDAR/ Event/ GNSS | City(Honkong, Tokyo) | Car      | [Link](https://github.com/IPNL-POLYU/UrbanNavDataset?tab=readme-ov-file)   | Yes   |                                  |                                                                       |
 | TUM-VIE         | Stereo Event/STtereoCam/IMU         | Indoor               | Handheld | [Link](https://cvg.cit.tum.de/data/datasets/visual-inertial-event-dataset) | No :( | HDR, corridor, slide, bike-night | [Paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9636728) |
+| CEAR            |                                     |                      |          |                                                                            |       |                                  |                                                                       |
 
 ---
 TUM-VIE는 ROS bag이 아닌데 Event의 경우 추천을 하지는 않음. 
