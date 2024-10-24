@@ -26,10 +26,12 @@ KL Divergence를 이용해서 원래의 dense한 prior를 근사함. nonlinear f
 
 ### IV - B. Information Sparsification
 $$
-\Lambda_{(\mathrm{MB)}} = \begin{bmatrix} \Lambda_{{\chi_{R}}{\chi_{R}}} \qquad \Lambda_{{\chi_{M}}{\chi_{R}}}  \end{bmatrix} 
+\Lambda_{(\mathrm{MB)}} = \begin{bmatrix} \Lambda_{{\chi_{R}}{\chi_{R}}} \qquad \Lambda_{{\chi_{M}}{\chi_{R}}} \\ \Lambda_{{\chi_{R}}{\chi_{M}}} \qquad  \Lambda_{{\chi_{M}}{\chi_{M}}}   \end{bmatrix} 
 $$
 
+$\Lambda_t = \Lambda_{{\chi_R}{\chi_R}}- \Lambda_{{\chi_R}{\chi_M}} {\Lambda_{{\chi_M}{\chi_M}}}^{-1} \Lambda_{{\chi_M}{\chi_R}}$
 
+dense prior information $\Lambda_t$은 다음과 같이 multivariate Gaussian을 따름 $p(\chi_t) \sim \mathcal{N}(\mu_t, \Lambda_t)$
 
 ## Experiments
 - Open dataset (EuRoC)으로 테스트 진행했고, 
