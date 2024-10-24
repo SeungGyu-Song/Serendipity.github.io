@@ -8,9 +8,7 @@ URL:
 이거 [[📦️BASALT]]의 contribution과 상당히 유사하다.  mapping에 관련해서 그냥 sparsity를 사용한 듯. 
 Marginalization을 하게 되면, prior term이 굉장히 dense해지는 것을 알고있자.
 ## Critique
-- 얻어갈 것
-- 이 방법의 장점 / 부족한 점
-- 어떻게 써먹을 수 있을지
+
 
 ## Introduction
 
