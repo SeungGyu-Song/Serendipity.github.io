@@ -57,7 +57,10 @@ docker run -itd --name pytorch -v /home/snggu/:/root/snggu -p 8888:8888 --gpus a
 	- 따라서 내 컴퓨터의 /home/snggu에 파일을 넣어주면 도커 컨테이너에서 /root/snggu에서 해당 파일을 사용할 수가 있게 됨.
 - `--restart=always` 옵션은 도커가 재실행 될 때 해당 컨테이너가 같이 실행되는 거.
 	- docker restart를 하게되면 restart가 없는 container는 다시 docker run -itd 를 통해서 해줘야하는데, restart 옵션이 있으면 곧바로 접속할 수 있음.
-- 
+
+```Docker
+
+```
 
 | 수행                               | 명령어                            |     |
 | -------------------------------- | ------------------------------ | --- |
