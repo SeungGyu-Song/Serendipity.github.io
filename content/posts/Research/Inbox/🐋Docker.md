@@ -58,9 +58,16 @@ docker run -itd --name pytorch -v /home/snggu/:/root/snggu -p 8888:8888 --gpus a
 - `--restart=always` 옵션은 도커가 재실행 될 때 해당 컨테이너가 같이 실행되는 거.
 	- docker restart를 하게되면 restart가 없는 container는 다시 docker run -itd 를 통해서 해줘야하는데, restart 옵션이 있으면 곧바로 접속할 수 있음.
 
+### ROS package용 커맨드
+
+`xhost +local:docker` : Docker에서 gui 쓰기 위해 Native에서 local과 docker의 xServer를 연결 ( 컴퓨터 부팅 후 최초 1번만 실행)
+
 ```Docker
+ docker run --gpus all --name vins -it --runtime nvidia --network host -e DISPLAY=$DISPLAY --privileged -v /tmp/.X11-unix:/tmp/.X11-unix -v /dev:/dev -v /home/snggu/vins1_ws/src/VINS-Fusion:/root/snggu -p 8888:8888 vins1:1.0
 
 ```
+
+
 
 | 수행                               | 명령어                            |     |
 | -------------------------------- | ------------------------------ | --- |
