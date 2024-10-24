@@ -38,7 +38,22 @@ dense prior information $\Lambda_t$은 다음과 같이 multivariate Gaussian을
 ![[Pasted image 20241024203318.png]]  
 
 
-### IV-C. Topology 
+$\Lambda_s = H_s^{\top}\Lambda_r H_s$
+
+
+### IV-C. Topology Measurement Covariances Recovery
+![[Pasted image 20241024210123.png]]
+이게 위의 식이랑 똑같은데 squared error term하고 d가 빠져있음. 어떻게 소거를 한 걸까? 
+#점검 
+
+본 논문의 measurement model 은 항상 full-rank하고 invertible한 Jacobian $H_s$를 제공하고 있기 때문에 15번 식을 closed form으로 풀 수가 있다.
+$$
+\Lambda_r^{(i)} = ( \big\{ H_s \Sigma_t H_s^{\top} \big\}^{(i) } )^{-1}
+$$
+(i)는 i번째 matrix block을 의미함.
+
+아래의 IJRR 논문에 유도과정이 나와있다고 함.
+
 ## Experiments
 - Open dataset (EuRoC)으로 테스트 진행했고, 
 - 연산량이 많이 걸린다는 단점이 있다. → parallelization으로 극복  가능
