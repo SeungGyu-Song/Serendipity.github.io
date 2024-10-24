@@ -37,6 +37,8 @@ dense prior information $\Lambda_t$은 다음과 같이 multivariate Gaussian을
 1. NFR 논문처럼 처음에 Markov blanket에 대해 factor graph topology를 만들건데 아래처럼 $p_s(\chi_t)$를 $p(\chi_t)$와 (원래 것과) 유사해지게 만드는 거임 ($\Sigma_t = \Lambda_t^{-1}$)
 ![[Pasted image 20241024203318.png]]  
 
+
+### IV-C. Topology 
 ## Experiments
 - Open dataset (EuRoC)으로 테스트 진행했고, 
 - 연산량이 많이 걸린다는 단점이 있다. → parallelization으로 극복  가능
