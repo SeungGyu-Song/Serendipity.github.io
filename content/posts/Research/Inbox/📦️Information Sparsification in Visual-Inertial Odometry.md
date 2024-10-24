@@ -5,7 +5,8 @@ author: Jerry Hsiung
 draft: true
 URL:
 ---
-이거 BASALT의 contribution과 상당히 유사하다.  mapping에 관련해서 그냥 sparsity를 사용한 듯. 
+이거 [[📦️BASALT]]의 contribution과 상당히 유사하다.  mapping에 관련해서 그냥 sparsity를 사용한 듯. 
+Marginalization을 하게 되면, prior term이 굉장히 dense해지는 것을 알고있자.
 ## Critique
 - 얻어갈 것
 - 이 방법의 장점 / 부족한 점
@@ -23,6 +24,7 @@ Marginalization 전략은 VINS와 비슷함.
 KL Divergence를 이용해서 원래의 dense한 prior를 근사함. nonlinear factor들을 이용해서.
 
 
+### IV. 
 ## Experiments
 - Open dataset (EuRoC)으로 테스트 진행했고, 
 - 연산량이 많이 걸린다는 단점이 있다. → parallelization으로 극복  가능
