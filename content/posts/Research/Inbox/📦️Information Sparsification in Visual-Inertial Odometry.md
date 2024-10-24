@@ -31,7 +31,11 @@ $$
 
 $\Lambda_t = \Lambda_{{\chi_R}{\chi_R}}- \Lambda_{{\chi_R}{\chi_M}} {\Lambda_{{\chi_M}{\chi_M}}}^{-1} \Lambda_{{\chi_M}{\chi_R}}$
 
+$\chi_w = {K_w, F_w, L_w}$ 
+
 dense prior information $\Lambda_t$은 다음과 같이 multivariate Gaussian을 따름 $p(\chi_t) \sim \mathcal{N}(\mu_t, \Lambda_t)$
+1. NFR 논문처럼 처음에 Markov blanket에 대해 factor graph topology를 만들건데 아래처럼 $p_s(\chi_t)$를 $p(\chi_t)$와 (원래 것과) 유사해지게 만드는 거임 ($\Sigma_t = \Lambda_t^{-1}$)
+![[Pasted image 20241024203318.png]]  
 
 ## Experiments
 - Open dataset (EuRoC)으로 테스트 진행했고, 
