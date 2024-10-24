@@ -1,4 +1,5 @@
 OpenVINS Study 5주차에는 IMU propagation에 관해 다룰 예정입니다.
+4주차와는 다르게 실제 EKF를 이룬
 
 <목차> 
 - Introduction / Heads up for reading the codes
@@ -17,9 +18,7 @@ OpenVINS Study 5주차에는 IMU propagation에 관해 다룰 예정입니다.
 - **[On-Manifold Preintegration for Real-Time Visual-Inertial Odometry](https://rpg.ifi.uzh.ch/docs/TRO16_forster.pdf) : SO(3) 배경지식** 
 ---
 # Code
-## Fast state propagation
-- [[🧩OpenVINS Code Analysis#visualize_odometry|ROS1Visualizer::visualize_odometry]]
-	- [[🧩OpenVINS Code Analysis#fast_state_propagate|Propagator::fast_state_propagate]] : [Discrete Propagation](https://docs.openvins.com/propagation_discrete.html) 내용
+
 ## EKF Propagation
 - [[🧩OpenVINS Code Analysis#do_feature_propagate_update|VioManager::do_feature_propagate_update]] 
 	- [[🧩OpenVINS Code Analysis#propagate_and_clone|Propagator::propagate_and_clone]]
@@ -31,4 +30,3 @@ OpenVINS Study 5주차에는 IMU propagation에 관해 다룰 예정입니다.
 [[🧩OpenVINS Code Analysis#Propagator|Propagator]]
 
 ---
-
