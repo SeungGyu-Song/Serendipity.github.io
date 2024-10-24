@@ -24,7 +24,13 @@ Marginalization 전략은 VINS와 비슷함.
 KL Divergence를 이용해서 원래의 dense한 prior를 근사함. nonlinear factor들을 이용해서.
 
 
-### IV. 
+### IV - B. Information Sparsification
+$$
+\Lambda_{(\mathrm{MB)}} = \begin{bmatrix} \Lambda_{{\chi_{R}}{\chi_{R}}} \qquad \Lambda_{{\chi_{M}}{\chi_{R}}}  \end{bmatrix} 
+$$
+
+
+
 ## Experiments
 - Open dataset (EuRoC)으로 테스트 진행했고, 
 - 연산량이 많이 걸린다는 단점이 있다. → parallelization으로 극복  가능

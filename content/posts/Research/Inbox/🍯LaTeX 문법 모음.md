@@ -94,3 +94,8 @@ bold체 : `\textbf{bold text}` → $\textbf{bold text}$
 | \therefore                    | ∴                                         | therefore                                                    |
 | \because                      | ∵                                         | because                                                      |
 | \lfloor x \rfloor             | $\lfloor \mathbf{a} \; \mathsf{x}\rfloor$ | 외적 표시할 때 쓰임.                                                 |
+
+
+![Greek문자](https://cdn2.ppomppu.co.kr/zboard/data3/2021/1129/20211129082355_urgmdzxv.png)
+
+
