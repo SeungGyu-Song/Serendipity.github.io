@@ -121,7 +121,13 @@ opt_flow_meas가 현재 시점에서의 observation 담고있는 거.
 
 `for (int lm_id : unconnected_obs0)` 
 - `std::map<TimeCamId, KeypointObservation<Scalar>>` kp_obs (로컬변수) 등록
-- 
+
+triangulation 한 feature의 depth가 0과 3.0 사이에 있어야만 
+- `lmdb.addLandmark(lm_id, kpt_pos)`로 landmark database에 넣어줌.
+- `valid_kp = true`
+
+`valid_kp`가 true인 feature들에 대해서
+`lmdb.addObservation(kv_obs.first, kv_obs.second)`
 
 
 ## IntegratedImuMeasurement
