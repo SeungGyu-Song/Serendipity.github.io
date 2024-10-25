@@ -44,8 +44,8 @@ return [[#factory_helper]](float)(config, cam, g, use_imu)
 #### initialize
 <span style="color:green">const Eigen::Vector3d<span style="color:purple">& bg_</span>, const Eigen::Vector3d<span style="color:purple">& ba_</span></span>
 
-Thread에 넣어줌 : `processing_thread.reset(new std::thread(`[[#proc_func]]`))`
-
+Thread에 넣어줌 :
+- `processing_thread.reset(new std::thread(`[[#proc_func]]`))`
 
 #### proc_func
 
@@ -59,8 +59,13 @@ Thread에 넣어줌 : `processing_thread.reset(new std::thread(`[[#proc_func]]`)
 - 중력과 imu의 acc를 기준으로 world와 body의 초기 회전관계를 정의함 → static 상황을 가정하는 건가?
 ###### Initialize 후
 [[#IntegratedImuMeasurement]]::Ptr을 `meas`라는 local  변수로 둠.
+- parameter : prev_frame→t_ns, last_state의 gyro, accel bias.
 
-[[#IntegratedImuMeasurement#integrate]][[Research/Zotero/Papers/@Forster_OnManifold_2017|Manifold preintegration]] 방식으로 preintegration을 진행
+[[#IntegratedImuMeasurement#integrate|IntegratedImuMeasurement::Integrate]] 함수를 통해서 [[Research/Zotero/Papers/@Forster_OnManifold_2017|Manifold preintegration]] 방식으로 preintegration을 진행
+이상한 게 integrate 함수에 넣어주기 전에 bias를 빼주는데, 들어가서도 bias를 또 빼줌.
+
+
+[[#measure]]함수로 optimization, marginalization 진행
 ###### popFromImuDataQueue
 imu_data_queue에서 최근 거를 빼서 [[#ImuData]]에 저장함.
 이 때, 우리가 사용하는 floating point가 double이면 그냥 뱉어주고, 아니면 float으로 cast를 통해 바꿔서 뱉어줌.
@@ -72,6 +77,7 @@ preintegration.h에 있음.
 ### Constructor
 `prev_frame`의 시간, gyro와 accel의 bias를 받아와서 초기화.
 
+### Integrate
 
 
 ## OpticalFlowBase
