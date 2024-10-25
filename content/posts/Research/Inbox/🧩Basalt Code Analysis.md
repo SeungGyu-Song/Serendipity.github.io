@@ -216,13 +216,21 @@ struct이고 `using KeypointId = size_t`
 class
 `Eigen::aligned_unordered_map<KeypointId`, [[#Keypoint]]`<Scalar>>` kpts
 - `using` KeypointId = size_t (optical_flow.h)
-- 
+- keypoint의 observation을 모아둔 거 같은데
 #### addObservation 
 
 
 ### Keypoint
 struct
 
+`using` Scalar, Vec2
+`using` ObsMap = `Eigen::aligned_map<TimeCamId, Vec2>`
+`using` MapIter = `typename ObsMap::iterator`
+
+`Vec2` direction
+`Scalar` inv_dist
+`TimeCamId` host_kf_id
+`ObsMap` obs
 
 ### KeypointObservation
 struct
