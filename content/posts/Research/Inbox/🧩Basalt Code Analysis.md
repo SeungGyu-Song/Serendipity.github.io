@@ -68,9 +68,13 @@ Thread에 넣어줌 :
 [[#measure]](curr_frame, meas)함수로 optimization, marginalization 진행
 
 ### measure
-<span style="color:green">OpticalFlowResult::Ptr <span style="color:purple">& meas</span>, IntegratedImuMeasurement(Scalar)::Ptr<span style="color:purple"> &meas</span> </span>
+<span style="color:green">OpticalFlowResult::Ptr <span style="color:purple">& opt_flow_meas</span>, IntegratedImuMeasurement(Scalar)::Ptr<span style="color:purple"> &meas</span> </span>
+opt_flow_meas가 현재 시점에서의 observation 담고있는 거.
 
-[[#IntegratedImuMeasurement#predictState|IntergatedImuMeasurement::prdictState]] (`frame_states.at(last_state_t_ns).getState(), g, next_state`)
+- [[#IntegratedImuMeasurement#predictState|IntergatedImuMeasurement::prdictState]] (`frame_states.at(last_state_t_ns).getState(), g, next_state`)함수를 통해 last_state_t_ns시점 기준으로 preintegration 값을 이용해서 pose를 구하고 이를 next_state로 저장.
+
+- `opt_flow_meas`의 모든 observation에 대해 for loop
+	- 
 
 
 
