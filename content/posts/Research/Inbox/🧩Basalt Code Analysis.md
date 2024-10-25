@@ -84,11 +84,25 @@ opt_flow_meas가 현재 시점에서의 observation 담고있는 거.
 
 - [[#IntegratedImuMeasurement#predictState|IntergatedImuMeasurement::prdictState]] (`frame_states.at(last_state_t_ns).getState(), g, next_state`)함수를 통해 last_state_t_ns시점 기준으로 preintegration 값을 이용해서 pose를 구하고 이를 next_state로 저장.
 
-- `opt_flow_meas`의 모든 observation에 대해 for loop
-	- host kf과 feature id를 `tcid_host`에 저장.
-	- [[#KeypointObservation]] 을 local 변수 `kobs`로 선언. (for individual obs)
-	- `lmdb`.[[#addObservation]](`tcid_target, kobs`)으로 [[#LandmarkDatabase]]의 `kpts` 변수와 `observations`변수에 추가해주기.
+`int` connected0 : 왼쪽 카메라에서 발견된 feature 개수
+`std::map<int64_t, int>` num_points_connected
+`std::unordered_set<int>` unconnected_obs0
 
+
+- `opt_flow_meas`의 모든 observation에 대해 for loop
+	- 한 observation에 있는 feature 별로 아래의 작업 수행
+	
+	- landmark에 속한 feature면 
+		- host kf과 feature id를 `tcid_host`에 저장.
+		- [[#KeypointObservation]] 을 local 변수 `kobs`로 선언. (for individual obs)
+		- `lmdb`.[[#addObservation]](`tcid_target, kobs`)으로 [[#LandmarkDatabase]]의 `kpts` 변수와 `observations`변수에 추가해주기.
+		- `num_points_connected`로 feature의 host_keyframe count +1
+		- `connected` ++
+	
+	- Landmark에 없던  새로운 feature면
+		- `unconnected_obs0.emplace(kep_id)`
+
+`connected0`
 
 ###### popFromImuDataQueue
 imu_data_queue에서 최근 거를 빼서 [[#ImuData]]에 저장함.
