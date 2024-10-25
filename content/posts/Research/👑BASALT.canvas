@@ -25,7 +25,10 @@
 		{"id":"df468926ed1bfe27","x":948,"y":-14,"width":460,"height":149,"type":"text","text":"#### [[🧩Basalt Code Analysis#IntegratedImuMeasurement#Integrate|IntegratedImuMeasurement::Integrate]](* data, accel_cov, gyro_cov)\n로, imu preintegration 근데  midPoint가 아니라 그냥 Euler 방식."},
 		{"id":"663c83fe58c6bcb1","x":1483,"y":480,"width":508,"height":160,"type":"text","text":"#### [[🧩Basalt Code Analysis#IntegratedImuMeasurement#predictState|IntegratedImuMeasurement::predictState]]  (`frame_states.at(last_state_t_ns).getState(), g, next_state`)\nlast_state_t_ns 기준으로 preintegration 값을 이용해서 pose값을 구함."},
 		{"id":"a60e1b6e647d667d","x":1043,"y":510,"width":269,"height":99,"type":"text","text":"#### [[🧩Basalt Code Analysis#measure|measure]] (curr_frame, meas)"},
-		{"id":"4ea9359b895f954d","x":3029,"y":524,"width":371,"height":216,"type":"text","text":"### Common_types.h\n\n- #### [[🧩Basalt Code Analysis#TimeCamId|TimeCmaId]]\n- #### [[🧩Basalt Code Analysis#Landmark|Landmark]]\n- "}
+		{"id":"392a55c07bebaeb4","x":1487,"y":760,"width":500,"height":60,"type":"text","text":"#### for loop : curr_frame의 observations "},
+		{"id":"7ec327c4d3513c30","x":2160,"y":760,"width":400,"height":60,"type":"text","text":"#### 해당 observation이 lmdb에 있다면\n"},
+		{"id":"4ea9359b895f954d","x":3160,"y":200,"width":371,"height":216,"type":"text","text":"### Common_types.h\n\n- #### [[🧩Basalt Code Analysis#TimeCamId|TimeCmaId]]\n- #### [[🧩Basalt Code Analysis#Landmark|Landmark]]\n- "},
+		{"id":"2aae5134bc099e64","x":2740,"y":660,"width":500,"height":261,"type":"text","text":"#### [[🧩Basalt Code Analysis#LandmarkDatabase#addObservation|LandmarkDatabse::addObservation]](tcid_target, kobs)\n로 LandmarkDatabase 안에 있는 변수 `kpts, observation` 업데이트.\n `kpts` : keypoint 당 host_keyframe 및 observations 모음\n `observations` : host_TimeCamid, 발견된 시점의 TimeCamId, feature id"}
 	],
 	"edges":[
 		{"id":"bc70900eb7eac5c0","fromNode":"67eb4a08deedd196","fromSide":"right","toNode":"5942c5bca9d7ebc6","toSide":"left"},
@@ -43,6 +46,9 @@
 		{"id":"f43430448d947791","fromNode":"df468926ed1bfe27","fromSide":"bottom","toNode":"a60e1b6e647d667d","toSide":"top"},
 		{"id":"87b1b4d3c17f11bc","fromNode":"ef822a6bde45574d","fromSide":"bottom","toNode":"df468926ed1bfe27","toSide":"top"},
 		{"id":"7db47aea5c5139ef","fromNode":"df468926ed1bfe27","fromSide":"right","toNode":"9219d73ac0b0235c","toSide":"left"},
-		{"id":"d1b9a19c4775be6c","fromNode":"a60e1b6e647d667d","fromSide":"right","toNode":"663c83fe58c6bcb1","toSide":"left"}
+		{"id":"d1b9a19c4775be6c","fromNode":"a60e1b6e647d667d","fromSide":"right","toNode":"663c83fe58c6bcb1","toSide":"left"},
+		{"id":"82399d0ff1bb41ff","fromNode":"663c83fe58c6bcb1","fromSide":"bottom","toNode":"392a55c07bebaeb4","toSide":"top"},
+		{"id":"36d51d1223450a20","fromNode":"392a55c07bebaeb4","fromSide":"right","toNode":"7ec327c4d3513c30","toSide":"left"},
+		{"id":"b5ab38b4a8450f00","fromNode":"7ec327c4d3513c30","fromSide":"right","toNode":"2aae5134bc099e64","toSide":"left"}
 	]
 }

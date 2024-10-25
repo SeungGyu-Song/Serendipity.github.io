@@ -87,7 +87,7 @@ opt_flow_meas가 현재 시점에서의 observation 담고있는 거.
 - `opt_flow_meas`의 모든 observation에 대해 for loop
 	- host kf과 feature id를 `tcid_host`에 저장.
 	- [[#KeypointObservation]] 을 local 변수 `kobs`로 선언. (for individual obs)
-	- `lmdb`.[[#addObservation]](`tcid_target, kobs`)
+	- `lmdb`.[[#addObservation]](`tcid_target, kobs`)으로 [[#LandmarkDatabase]]의 `kpts` 변수와 `observations`변수에 추가해주기.
 
 
 ###### popFromImuDataQueue
@@ -214,11 +214,11 @@ struct이고 `using KeypointId = size_t`
 ## landmark_database.h
 ### LandmarkDatabase 
 class
-`Eigen::aligned_unordered_map<KeypointId`, [[#Keypoint]]`<Scalar>>` kpts
+`Eigen::aligned_unordered_map<KeypointId`, [[#Keypoint]]`<Scalar>>` **kpts**
 - `using` KeypointId = size_t (optical_flow.h)
 - keypoint당 host_keyframe 및 observation을 모아둔 거 같은데
 
-`std::unordred_map<TimeCamId, std::map<TimeCamId, std::set<KeypointId>>>` observation
+`std::unordred_map<TimeCamId, std::map<TimeCamId, std::set<KeypointId>>>` **observation**
 - 첫 TimeCamId : host_kf_id
 - 다음 TimeCamId : 발견된 시점
 - KeypointId : feature id
@@ -228,10 +228,10 @@ KeypointObservation은 그냥 한 keypoint의 observation이라 생각하자.
 tcid_target은 currframe 시간과 cam_id
 
 그래서 kpts에서 내가 찾고싶은 keypoint가 있는지 찾아보고 
-kpts의 Keypoint의 obs에 넣어줌 (`it->second.obs[tcid_target] = o.pos`)
+`kpts`의 Keypoint의 obs에 넣어줌 (`it->second.obs[tcid_target] = o.pos`)
 
-
-
+`observations[it->second.host_kf_id][tcid_target].insert(it->first)` 
+observation 변수에도 넣어줌.
 ### Keypoint
 struct, 한 keypoint의 observation들을 가지고 있는 자료구조.
 
