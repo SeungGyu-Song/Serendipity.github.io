@@ -4,6 +4,9 @@
 `opt_flow_ptr->intput_queue.push(data)`
 
 ## BundleAdjustmentBase
+[[#LandmarkDatabase]](Scalar) lmdb
+
+
 ## SqrtBundleAdjustmentBase
 <span style="color: brown">public <span style="color: blue">BundleAdjustmentBase</span></span>
 [[#BundleAdjustmentBase]]
@@ -82,8 +85,8 @@ opt_flow_meas가 현재 시점에서의 observation 담고있는 거.
 - [[#IntegratedImuMeasurement#predictState|IntergatedImuMeasurement::prdictState]] (`frame_states.at(last_state_t_ns).getState(), g, next_state`)함수를 통해 last_state_t_ns시점 기준으로 preintegration 값을 이용해서 pose를 구하고 이를 next_state로 저장.
 
 - `opt_flow_meas`의 모든 observation에 대해 for loop
-	- 
-
+	- host kf과 feature id를 `tcid_host`에 저장.
+	- [[#KeypointObservation]] 을 local 변수 `kobs`로 선언.
 
 
 ###### popFromImuDataQueue
@@ -207,8 +210,13 @@ struct이고 `using KeypointId = size_t`
 - double exposure
 
 
-
-
+## landmark_database.h
+### LandmarkDatabase 
+class
+### KeypointObservation
+struct
+`int` kpt_id
+`Eigen::Matrix<Scalar, 2, 1>` pos
 
 ## Common_types.h
 
