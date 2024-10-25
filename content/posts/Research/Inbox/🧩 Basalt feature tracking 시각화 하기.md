@@ -11,5 +11,3 @@ BASALT는  OpenCV로 이미지를 처리하는 게 아니라 Pangolin::Managed_I
 
 sqrt_keypoint_vio.cpp에서 `prev_opt_flow_res` get함수 가져와서 옛날 거랑 현재 feature 
 
-
-승재형, 명우형, 진우형
