@@ -46,16 +46,19 @@ return [[#factory_helper]](float)(config, cam, g, use_imu)
 
 Thread에 넣어줌 : `processing_thread.reset(new std::thread(`[[#proc_func]]`))`
 
-imu의 acc, gyr covariance를 받아오고, 각각의 bias와 scale값을 받아옴.
-- 따라서 결국 raw_measurement + scale * raw_measurement - bias 값을 가져옴.
+
 #### proc_func
 
 ##### while (true)
-`vision_data_queue.pop(current_frame)` : optical flow의 결과를 뽑아옴.
-
+`vision_data_queue.pop(current_frame)` : optical flow의 결과 (transforms)를 뽑아옴.
+###### initialize 안 됐을 때
 - data = [[#popFromImuDataQueue]]
+- [[#getCalibrated]] 함수를 통해서 
+	- imu의 acc, gyr covariance를 받아오고, 각각의 bias와 scale값을 받아옴.
+	- 따라서 결국 raw_measurement + scale * raw_measurement - bias 값을 가져옴.
 - 중력과 imu의 acc를 기준으로 world와 body의 초기 회전관계를 정의함 → static 상황을 가정하는 건가?
-- 
+###### Initialize 후
+
 
 ###### popFromImuDataQueue
 imu_data_queue에서 최근 거를 빼서 [[#ImuData]]에 저장함.
