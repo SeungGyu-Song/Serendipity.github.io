@@ -22,7 +22,7 @@
 		{"id":"f16d5211d1059731","type":"text","text":"#### [[🧩Basalt Code Analysis#OpticalFlowBase#input_queue|OpticalFlowBase::inpute_queue]]\n","x":1932,"y":-1035,"width":409,"height":83},
 		{"id":"cb411d32be060607","type":"text","text":"#### Calib Config file 의미들\n##### Bias \nAccel은 9개의 값, Gyro는 12개의 값을 넣으라고 되어있다.\nAccel : 처음 3개가 bias, 나머지가 scale factor.\nGyro : 처음 3개가 bias, 나머지 9개가 각각 scale factor","x":781,"y":-1600,"width":487,"height":202},
 		{"id":"6c2426522eed89d9","type":"text","text":"### 🧵Thread\n- ##### [[🧩Basalt Code Analysis#ProcessingLoop|PatchOpticalFlow::processingLoop]]\n- ##### [[🧩Basalt Code Analysis#SqrtKeypointVioEstimator#initialize|SqrtKeypointVioEstimator::initialize]]\n\n","x":1923,"y":-1600,"width":475,"height":166},
-		{"id":"ef822a6bde45574d","x":953,"y":-254,"width":359,"height":183,"type":"text","text":"#### [[🧩Basalt Code Analysis#IntegratedImuMeasurement|IntegratedImuMeasurement]] 객체로 `meas`(prev_frame→t_ns, last_state의 gyro, accel bias)"}
+		{"id":"ef822a6bde45574d","x":998,"y":-254,"width":359,"height":183,"type":"text","text":"#### [[🧩Basalt Code Analysis#IntegratedImuMeasurement|IntegratedImuMeasurement]] 객체로 `meas`(prev_frame→t_ns, last_state의 gyro, accel bias) 생성"}
 	],
 	"edges":[
 		{"id":"bc70900eb7eac5c0","fromNode":"67eb4a08deedd196","fromSide":"right","toNode":"5942c5bca9d7ebc6","toSide":"left"},
@@ -37,6 +37,7 @@
 		{"id":"fb7359d28aff5e4a","fromNode":"f459ed9a2db8e8bf","fromSide":"bottom","toNode":"ab5031bf4cec18d4","toSide":"top"},
 		{"id":"cc0546209db3a815","fromNode":"ab5031bf4cec18d4","fromSide":"bottom","toNode":"4fd8ba6f7744f68b","toSide":"top"},
 		{"id":"f78d2a22e3033abf","fromNode":"ab9752ade6e6c920","fromSide":"right","toNode":"df468926ed1bfe27","toSide":"left"},
-		{"id":"f43430448d947791","fromNode":"df468926ed1bfe27","fromSide":"bottom","toNode":"a60e1b6e647d667d","toSide":"top"}
+		{"id":"f43430448d947791","fromNode":"df468926ed1bfe27","fromSide":"bottom","toNode":"a60e1b6e647d667d","toSide":"top"},
+		{"id":"87b1b4d3c17f11bc","fromNode":"ef822a6bde45574d","fromSide":"bottom","toNode":"df468926ed1bfe27","toSide":"top"}
 	]
 }

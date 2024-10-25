@@ -62,7 +62,7 @@ Thread에 넣어줌 :
 - parameter : prev_frame→t_ns, last_state의 gyro, accel bias.
 
 [[#IntegratedImuMeasurement#integrate|IntegratedImuMeasurement::Integrate]] 함수를 통해서 [[Research/Zotero/Papers/@Forster_OnManifold_2017|Manifold preintegration]] 방식으로 preintegration을 진행
-이상한 게 integrate 함수에 넣어주기 전에 bias를 빼주는데, 들어가서도 bias를 또 빼줌.
+이상한 게 integrate 함수에 넣어주기 전에 **config에서 저장한** bias를 빼주는데, 들어가서도 **우리가 추정한** bias를 또 빼줌.
 
 
 [[#measure]]함수로 optimization, marginalization 진행
