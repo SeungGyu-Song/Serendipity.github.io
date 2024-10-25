@@ -49,6 +49,12 @@ return [[#factory_helper]](float)(config, cam, g, use_imu)
 [[#SqrtBundleAdjustmentBase]] 
 
 `std::set<int64_t>` kf_ids
+
+### popFromImuDataQueue
+imu_data_queue에서 최근 거를 빼서 [[#ImuData]]에 저장함.
+이 때, 우리가 사용하는 floating point가 double이면 그냥 뱉어주고, 아니면 float으로 cast를 통해 바꿔서 뱉어줌.
+
+
 #### Constructor
 - config파일에서 option 값 불러오기.
 - config에서 vio_sqrt_marg == true로 하면
@@ -108,11 +114,13 @@ opt_flow_meas가 현재 시점에서의 observation 담고있는 거.
 
 `connected0`과 `unconnected_obs0` 개수의 비율로 keyframe 여부 판단.
 
-###### popFromImuDataQueue
-imu_data_queue에서 최근 거를 빼서 [[#ImuData]]에 저장함.
-이 때, 우리가 사용하는 floating point가 double이면 그냥 뱉어주고, 아니면 float으로 cast를 통해 바꿔서 뱉어줌.
 
 #### Triangulate 진행
+`kf_ids.emplace(last_state_t_ns)`로 keyframe으로 등록.
+
+`for (int lm_id : unconnected_obs0)` 
+- `std::map<TimeCamId, KeypointObservation<Scalar>>` kp_obs (로컬변수) 등록
+- 
 
 
 ## IntegratedImuMeasurement
