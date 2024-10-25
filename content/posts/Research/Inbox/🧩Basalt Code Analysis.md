@@ -2,6 +2,12 @@
 ### feed_images
 [[#OpticalFlowBase]]의 객체가 뽑아 쓸 queue에 이미지를 넣어주는 역할
 `opt_flow_ptr->intput_queue.push(data)`
+
+## BundleAdjustmentBase
+## SqrtBundleAdjustmentBase
+<span style="color: brown">public <span style="color: blue">BundleAdjustmentBase</span></span>
+[[#BundleAdjustmentBase]]
+
 ## VioEstimatorBase
 
 ### Constructor
@@ -22,6 +28,8 @@ res.reset(new SqrtKeypointVoEstimator<Scalar>(cam, config));
 
 }
 ```
+
+
 ### VioEstimatorFactory
 #### getVioEstimator
 결국 [[#SqrtKeypointVioEstimator]]를 불러오는 거.
@@ -35,7 +43,7 @@ return [[#factory_helper]](float)(config, cam, g, use_imu)
 
 ### SqrtKeypointVioEstimator 
 <span style="color: brown">public <span style="color: blue">VioEstimatorBase, </span>public <span style="color: blue">SqrtBundleAdjustmentBase(Scalar_)</span></span>
-
+[[#SqrtBundleAdjustmentBase]] 
 #### Constructor
 - config파일에서 option 값 불러오기.
 - config에서 vio_sqrt_marg == true로 하면
@@ -81,6 +89,8 @@ opt_flow_meas가 현재 시점에서의 observation 담고있는 거.
 ###### popFromImuDataQueue
 imu_data_queue에서 최근 거를 빼서 [[#ImuData]]에 저장함.
 이 때, 우리가 사용하는 floating point가 double이면 그냥 뱉어주고, 아니면 float으로 cast를 통해 바꿔서 뱉어줌.
+
+
 
 
 ## IntegratedImuMeasurement
@@ -176,7 +186,7 @@ transforms의 observation 초기화, 시간(`t_ns`) 초기화
 
 `lm_to_remove`에 있는 keypoint들을 `transforms->observations.at(1).erase(id)`로 오른쪽 observation에서 삭제.
 
-그럼 일단 왼쪽에서 뽑힌 거는 그냥 true에 가까운 meausrement라고 생각하는 거네
+그럼 일단 왼쪽에서 뽑힌 거는 그냥 true에 가까운 measurement라고 생각하는 거네
 ### OpticalFlowResult
 struct이고 `using KeypointId = size_t` 
 `std::vector<Eigen::alinged_map<KeypointId, Eigen::AffineCompact2f>>` observations
@@ -197,6 +207,24 @@ struct이고 `using KeypointId = size_t`
 - double exposure
 
 
+
+
+
+## Common_types.h
+
+`using`  FrameId = int64_t
+`using` CamId = std::size_t
+`using` FeatureTrack = std::map<TimeCamId, FeatureId>
+`using` FeatureId = int
+
+### TimeCamId
+- [[#FrameId]] frame_id
+- [[#CamId]] cam_id
+
+### Landmark
+- `Eigen::Vector3d ` p
+- [[#FeatureTrack]] obs
+- [[#FeatureTrack]] outlier_obs
 
 
 # Pangolin
