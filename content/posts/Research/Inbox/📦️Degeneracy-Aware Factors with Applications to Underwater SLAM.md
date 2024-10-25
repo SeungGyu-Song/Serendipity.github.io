@@ -7,7 +7,10 @@ URL:
 ---
 #Degeneracy 
 ## Critique
-
+#### 전 과의 차이점 
+Methodology 참고
+#### 보완할 점
+그냥 well-constraint한 방향만 최적화하면 나머지 방향으로는 값이 안 변하는 거 아닌가? 이 부분을 좀 더 생각해보면 좋을 것 같다.
 
 ## Methodology
 - degeneracy한 환경에서 degenerate한 방향을 제외하고 optimization을 하자
@@ -19,4 +22,4 @@ URL:
 
 
 ### Future Articles to Read
-
+ICP에 대해서 읽어보자. 여기 논문에서 ICP의 Ax=b에서 A를 linearized system이라고도 하고, $A^TA$를 covariance라고 하는 게, jacobian을 써서 얘도 linearization을 한 건가?
