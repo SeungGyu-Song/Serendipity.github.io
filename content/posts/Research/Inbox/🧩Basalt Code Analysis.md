@@ -65,7 +65,14 @@ Thread에 넣어줌 :
 이상한 게 integrate 함수에 넣어주기 전에 **config에서 저장한** bias를 빼주는데, 들어가서도 **우리가 추정한** bias를 또 빼줌.
 
 
-[[#measure]]함수로 optimization, marginalization 진행
+[[#measure]](curr_frame, meas)함수로 optimization, marginalization 진행
+
+### measure
+<span style="color:green">OpticalFlowResult::Ptr <span style="color:purple">& meas</span>, IntegratedImuMeasurement(Scalar)::Ptr<span style="color:purple"> &meas</span> </span>
+
+
+
+
 ###### popFromImuDataQueue
 imu_data_queue에서 최근 거를 빼서 [[#ImuData]]에 저장함.
 이 때, 우리가 사용하는 floating point가 double이면 그냥 뱉어주고, 아니면 float으로 cast를 통해 바꿔서 뱉어줌.
