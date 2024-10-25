@@ -47,6 +47,8 @@ return [[#factory_helper]](float)(config, cam, g, use_imu)
 ### SqrtKeypointVioEstimator 
 <span style="color: brown">public <span style="color: blue">VioEstimatorBase, </span>public <span style="color: blue">SqrtBundleAdjustmentBase(Scalar_)</span></span>
 [[#SqrtBundleAdjustmentBase]] 
+
+`std::set<int64_t>` kf_ids
 #### Constructor
 - config파일에서 option 값 불러오기.
 - config에서 vio_sqrt_marg == true로 하면
@@ -83,6 +85,8 @@ Thread에 넣어줌 :
 opt_flow_meas가 현재 시점에서의 observation 담고있는 거.
 
 - [[#IntegratedImuMeasurement#predictState|IntergatedImuMeasurement::prdictState]] (`frame_states.at(last_state_t_ns).getState(), g, next_state`)함수를 통해 last_state_t_ns시점 기준으로 preintegration 값을 이용해서 pose를 구하고 이를 next_state로 저장.
+- `last_state_t_ns` = `opt_flow_meas->t_ns`
+- `next_state.t_ns` = `opt_flow_meas->t_ns`
 
 `int` connected0 : 왼쪽 카메라에서 발견된 feature 개수
 `std::map<int64_t, int>` num_points_connected
@@ -102,13 +106,13 @@ opt_flow_meas가 현재 시점에서의 observation 담고있는 거.
 	- Landmark에 없던  새로운 feature면
 		- `unconnected_obs0.emplace(kep_id)`
 
-`connected0`
+`connected0`과 `unconnected_obs0` 개수의 비율로 keyframe 여부 판단.
 
 ###### popFromImuDataQueue
 imu_data_queue에서 최근 거를 빼서 [[#ImuData]]에 저장함.
 이 때, 우리가 사용하는 floating point가 double이면 그냥 뱉어주고, 아니면 float으로 cast를 통해 바꿔서 뱉어줌.
 
-
+#### Triangulate 진행
 
 
 ## IntegratedImuMeasurement
