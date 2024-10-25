@@ -86,7 +86,8 @@ opt_flow_meas가 현재 시점에서의 observation 담고있는 거.
 
 - `opt_flow_meas`의 모든 observation에 대해 for loop
 	- host kf과 feature id를 `tcid_host`에 저장.
-	- [[#KeypointObservation]] 을 local 변수 `kobs`로 선언.
+	- [[#KeypointObservation]] 을 local 변수 `kobs`로 선언. (for individual obs)
+	- `lmdb`.[[#addObservation]](`tcid_target, kobs`)
 
 
 ###### popFromImuDataQueue
@@ -213,6 +214,16 @@ struct이고 `using KeypointId = size_t`
 ## landmark_database.h
 ### LandmarkDatabase 
 class
+`Eigen::aligned_unordered_map<KeypointId`, [[#Keypoint]]`<Scalar>>` kpts
+- `using` KeypointId = size_t (optical_flow.h)
+- 
+#### addObservation 
+
+
+### Keypoint
+struct
+
+
 ### KeypointObservation
 struct
 `int` kpt_id
