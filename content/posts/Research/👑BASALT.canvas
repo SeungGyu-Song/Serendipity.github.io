@@ -9,7 +9,6 @@
 		{"id":"5b842237c8ae2529","type":"text","text":"#### thread4 out_state_queue.pop","x":80,"y":350,"width":280,"height":60},
 		{"id":"16bbb2ca460e8c53","type":"text","text":"#### thread5 [[🧩Basalt Code Analysis#print_queue_fn|print_queue_fn]]","x":440,"y":350,"width":260,"height":60},
 		{"id":"f16d5211d1059731","type":"text","text":"#### [[🧩Basalt Code Analysis#OpticalFlowBase#input_queue|OpticalFlowBase::inpute_queue]]\n","x":-979,"y":537,"width":409,"height":83},
-		{"id":"88c51c7e2f964193","type":"text","text":"#### [[🧩Basalt Code Analysis#initialize|SqrtKeyPointVioEsimator::initialize]]\n\n`opt_flow_ptr->output_queue = &vio->vision_data_queue`\n\n`vio→output_state_queue = &out_state_queue` ","x":-397,"y":-20,"width":425,"height":160},
 		{"id":"828a87d5f1f1a1c0","type":"text","text":"#### [[🧩Basalt Code Analysis#OpticalFlowBase#PatchOpticalFlow|OpticalFlowBase::PatchOpticalFlow]]\n","x":169,"y":-591,"width":431,"height":54},
 		{"id":"5942c5bca9d7ebc6","type":"text","text":"#### [[🧩Basalt Code Analysis#basalt#factory_helper|VioEsimatorBase::factory_helper]]\n\n\nSqrtKeypointVioEstimator를 return","x":169,"y":-352,"width":401,"height":98},
 		{"id":"ab9752ade6e6c920","type":"text","text":"#### [[🧩Basalt Code Analysis#SqrtKeypointVioEstimator#initialize|SqrtKeypointVioEstimator::initialize]] (bg, ba)","x":220,"y":28,"width":518,"height":64},
@@ -19,7 +18,8 @@
 		{"id":"0ce93bc801f115e3","type":"text","text":"#### [[🧩Basalt Code Analysis#PatchOpticalFlow#processFrame|PatchOpticalFlow::processFrame]](input_ptr→t_ns, input_ptr)","x":1484,"y":-591,"width":676,"height":54},
 		{"id":"f459ed9a2db8e8bf","x":2367,"y":-611,"width":513,"height":95,"type":"text","text":"#### [[🧩Basalt Code Analysis#PatchOpticalFlow#trackPoints|PatchOpticalFlow::trackPoints]](old_pyramid, pyramid, transforms, new_transforms)"},
 		{"id":"ab5031bf4cec18d4","x":2434,"y":-360,"width":380,"height":64,"type":"text","text":"#### [[🧩Basalt Code Analysis#PatchOpticalFlow#addPoints|PatchOpticalFlow::addPoints]]()"},
-		{"id":"4fd8ba6f7744f68b","x":2421,"y":-184,"width":406,"height":164,"type":"text","text":"#### [[🧩Basalt Code Analysis#PatchOpticalFlow::filterPoints|PatchOpticalFlow::filterPoints]]()\nfeature는 최종적으로 `transforms->observations`에 저장이 됨.\n`output_queue`에는 `transforms`가 들어감."}
+		{"id":"4fd8ba6f7744f68b","x":2421,"y":-184,"width":406,"height":164,"type":"text","text":"#### [[🧩Basalt Code Analysis#PatchOpticalFlow::filterPoints|PatchOpticalFlow::filterPoints]]()\nfeature는 최종적으로 `transforms->observations`에 저장이 됨.\n`output_queue`에는 `transforms`가 들어감."},
+		{"id":"88c51c7e2f964193","type":"text","text":"\n#### [[🧩Basalt Code Analysis#initialize|🧵 SqrtKeyPointVioEsimator::initialize]]\n\n`opt_flow_ptr->output_queue = &vio->vision_data_queue`\n\n`vio→output_state_queue = &out_state_queue` ","x":-421,"y":-20,"width":473,"height":160}
 	],
 	"edges":[
 		{"id":"bc70900eb7eac5c0","fromNode":"67eb4a08deedd196","fromSide":"right","toNode":"5942c5bca9d7ebc6","toSide":"left"},
