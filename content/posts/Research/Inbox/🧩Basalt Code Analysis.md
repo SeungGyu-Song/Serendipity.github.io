@@ -70,6 +70,7 @@ Thread에 넣어줌 :
 ### measure
 <span style="color:green">OpticalFlowResult::Ptr <span style="color:purple">& meas</span>, IntegratedImuMeasurement(Scalar)::Ptr<span style="color:purple"> &meas</span> </span>
 
+[[#IntegratedImuMeasurement#predictState|IntergatedImuMeasurement::prdictState]] (`frame_states.at(last_state_t_ns).getState(), g, next_state`)
 
 
 
