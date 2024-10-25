@@ -15,8 +15,11 @@
 		{"id":"ab9752ade6e6c920","type":"text","text":"#### [[🧩Basalt Code Analysis#SqrtKeypointVioEstimator#initialize|SqrtKeypointVioEstimator::initialize]] (bg, ba)","x":220,"y":28,"width":518,"height":64},
 		{"id":"cb411d32be060607","type":"text","text":"#### Calib Config file 의미들\n##### Bias \nAccel은 9개의 값, Gyro는 12개의 값을 넣으라고 되어있다.\nAccel : 처음 3개가 bias, 나머지가 scale factor.\nGyro : 처음 3개가 bias, 나머지 9개가 각각 scale factor","x":1240,"y":-1222,"width":487,"height":202},
 		{"id":"6c2426522eed89d9","type":"text","text":"### 🧵Thread\n- ##### [[🧩Basalt Code Analysis#ProcessingLoop|PatchOpticalFlow::processingLoop]]\n- ##### [[🧩Basalt Code Analysis#SqrtKeypointVioEstimator#initialize|SqrtKeypointVioEstimator::initialize]]\n\n","x":1312,"y":-886,"width":475,"height":166},
-		{"id":"5b622ed35ecac096","x":867,"y":-601,"width":445,"height":75,"type":"text","text":"#### 🧵[[🧩Basalt Code Analysis#ProcessingLoop|PatchOpticalFlow::processingLoop]]\n"},
-		{"id":"0ce93bc801f115e3","x":1484,"y":-591,"width":676,"height":54,"type":"text","text":"#### [[🧩Basalt Code Analysis#PatchOpticalFlow#processFrame|PatchOpticalFlow::processFrame]](input_ptr→t_ns, input_ptr)"}
+		{"id":"5b622ed35ecac096","type":"text","text":"#### 🧵[[🧩Basalt Code Analysis#ProcessingLoop|PatchOpticalFlow::processingLoop]]\n","x":867,"y":-601,"width":445,"height":75},
+		{"id":"0ce93bc801f115e3","type":"text","text":"#### [[🧩Basalt Code Analysis#PatchOpticalFlow#processFrame|PatchOpticalFlow::processFrame]](input_ptr→t_ns, input_ptr)","x":1484,"y":-591,"width":676,"height":54},
+		{"id":"f459ed9a2db8e8bf","x":2367,"y":-611,"width":513,"height":95,"type":"text","text":"#### [[🧩Basalt Code Analysis#PatchOpticalFlow#trackPoints|PatchOpticalFlow::trackPoints]](old_pyramid, pyramid, transforms, new_transforms)"},
+		{"id":"ab5031bf4cec18d4","x":2434,"y":-360,"width":380,"height":64,"type":"text","text":"#### [[🧩Basalt Code Analysis#PatchOpticalFlow#addPoints|PatchOpticalFlow::addPoints]]()"},
+		{"id":"4fd8ba6f7744f68b","x":2434,"y":-184,"width":380,"height":64,"type":"text","text":"#### [[🧩Basalt Code Analysis#PatchOpticalFlow::filterPoints|PatchOpticalFlow::filterPoints]]()"}
 	],
 	"edges":[
 		{"id":"bc70900eb7eac5c0","fromNode":"67eb4a08deedd196","fromSide":"right","toNode":"5942c5bca9d7ebc6","toSide":"left"},
@@ -26,6 +29,8 @@
 		{"id":"e99c317aea2e5a30","fromNode":"88c51c7e2f964193","fromSide":"right","toNode":"ab9752ade6e6c920","toSide":"left"},
 		{"id":"41644c601480c340","fromNode":"9a3580f59a0b8a48","fromSide":"bottom","toNode":"f16d5211d1059731","toSide":"top"},
 		{"id":"febb20f9ce7a0cf6","fromNode":"828a87d5f1f1a1c0","fromSide":"right","toNode":"5b622ed35ecac096","toSide":"left"},
-		{"id":"4939b6bd5fc6e114","fromNode":"5b622ed35ecac096","fromSide":"right","toNode":"0ce93bc801f115e3","toSide":"left"}
+		{"id":"4939b6bd5fc6e114","fromNode":"5b622ed35ecac096","fromSide":"right","toNode":"0ce93bc801f115e3","toSide":"left"},
+		{"id":"64f1d5b91b8d9b96","fromNode":"0ce93bc801f115e3","fromSide":"right","toNode":"f459ed9a2db8e8bf","toSide":"left"},
+		{"id":"fb7359d28aff5e4a","fromNode":"f459ed9a2db8e8bf","fromSide":"bottom","toNode":"ab5031bf4cec18d4","toSide":"top"}
 	]
 }
