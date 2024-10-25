@@ -109,13 +109,14 @@ opt_flow_meas가 현재 시점에서의 observation 담고있는 거.
 		- `num_points_connected`로 feature의 host_keyframe count +1
 		- `connected` ++
 	
-	- Landmark에 없던  새로운 feature면
+	- Landmark에 없던  새로운 왼쪽에서 뽑힌 feature면 
 		- `unconnected_obs0.emplace(kep_id)`
 
 `connected0`과 `unconnected_obs0` 개수의 비율로 keyframe 여부 판단.
 
+뭔가 다 왼쪽에서 새로 뽑힌 것만 triangulation하고 이럼. 
 
-#### Triangulate 진행
+#### Triangulate 진행 
 `kf_ids.emplace(last_state_t_ns)`로 keyframe으로 등록.
 
 `for (int lm_id : unconnected_obs0)` 
