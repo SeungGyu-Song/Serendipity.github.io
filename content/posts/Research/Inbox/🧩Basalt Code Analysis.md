@@ -149,9 +149,15 @@ visualize를 위해 작업하는 거
 - [[#VioVisualizationData]]::Ptr data (new VioVisualizationData)
 - `frame_states`의 값들을 data→states에 넣기
 - `frame_poses`의 값들을 data→frames에 넣기
-- [[#BundleAdjustmentBase#get_current_points|ba_base::get_gurrent_points]] (`data->points, data->point_ids`) : points에는 landmark의 3차원 위치, point_ids에는 3차원 복원했다는 의미로 1을 emplace_back
+- [[#BundleAdjustmentBase#get_current_points|ba_base::get_current_points]] (`data->points, data->point_ids`) : points에는 landmark의 3차원 위치, point_ids에는 3차원 복원했다는 의미로 1을 emplace_back
 
 ### optimize_and_marg
+[[#optimize]]
+[[#marginalize]](`num_points_connected, lost_landmarks`)
+
+### optimize
+[[#AbsOrderMap]] aom 이라는 local 변수 선언 
+
 
 ## IntegratedImuMeasurement
 preintegration.h에 있음.
@@ -322,6 +328,14 @@ struct
 - [[#FeatureTrack]] obs
 - [[#FeatureTrack]] outlier_obs
 
+## imu_types.h
+### AbsOrderMap
+struct
+
+- `std::map<int64_t, std::pair<int, int>>` abs_order_map
+- `size_t` items
+- `size_t` total_size
+- 
 
 # Pangolin
 ### ManagedImage
