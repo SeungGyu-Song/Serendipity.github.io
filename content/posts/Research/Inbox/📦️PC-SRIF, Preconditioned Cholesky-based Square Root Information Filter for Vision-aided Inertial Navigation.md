@@ -17,12 +17,14 @@ source :
 - 
 
 ### Introduction
-현재 VINS 알고리즘들은 information matrix를 포함한 방정식을 풀 때 numerical stability를 위해 QR decomposition (float32)를 이용해 풀곤했다. 
-하지만 연구에서 이 stability에 관련된 ill-conditioned는 VINS system에 있는 게 아니라 state parameter에서 있는 거라고 밝혀냈고, 이에 따라 precondition을 해서 QR보다 약 2배 빠른 ($O(mn^2) , O(2mn^2)$) Cholesky decompo sition을 활용하는 새로운 기법 제시.
+현재 VINS 알고리즘들은 *information matrix*를 포함한 방정식을 풀 때 numerical stability를 위해 QR decomposition (float32)를 이용해 풀곤했다. 
+하지만 연구에서 이 stability에 관련된 ill-conditioned는 VINS system에 있는 게 아니라 state parameter에서 있는 거라고 밝혀냈고, 이에 따라 precondition을 해서 QR보다 약 2배 빠른 ($O(mn^2) , O(2mn^2)$) Cholesky decomposition을 활용하는 새로운 기법 제시.
 
-[[📦️A square root inverse filter for efficient vision-aided inertial navigation on mobile devices]] 논문에 따르면 VINS에서 *Information matrix는 주로 ill-conditioned*이므로, double precision이 필요하다고 주장함.
+[[📦️A square root inverse filter for efficient vision-aided inertial navigation on mobile devices]] 논문에 따르면 VINS에서 *Information matrix는 주로 ill-conditioned*이므로, double precision(float64)이 필요하다고 주장함.
+(아마 residual function이 state에 비해 겁나 많아서 그런 거 같아.)
+→ 그래서 square root information filter가 사용이 됨.
 
-
+가장 효율적인 방식은 Cholesky 방식으로  least-squares 푸는 건데 float64가 필요하고 QR float32보다 효율적이지 않음.
 ### Methodology
 
 
