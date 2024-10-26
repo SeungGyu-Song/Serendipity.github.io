@@ -48,6 +48,13 @@ return [[#factory_helper]](float)(config, cam, g, use_imu)
 <span style="color: brown">public <span style="color: blue">VioEstimatorBase, </span>public <span style="color: blue">SqrtBundleAdjustmentBase(Scalar_)</span></span>
 [[#SqrtBundleAdjustmentBase]] 
 
+`using` [[#BundleAdjustmentBase]](Scalar)::frame_poses
+`using` [[#BundleAdjustmentBase]](Scalar)::frame_states
+`using` [[#BundleAdjustmentBase]](Scalar)::lmdb
+`using` [[#BundleAdjustmentBase]](Scalar)::obs_std_dev
+`using` [[#BundleAdjustmentBase]](Scalar)::huber_thresh
+`using` [[#BundleAdjustmentBase]](Scalar)::calib
+
 `std::set<int64_t>` kf_ids
 
 ### popFromImuDataQueue
@@ -135,11 +142,12 @@ triangulation 한 feature의 depth가 0과 3.0 사이에 있어야만
 만약 config에서 `vio_marg_lost_landmarks`를 true로 해놓았다면
 - [[#LandmarkDatabase#getLandmarks|LandmarkDatabase::getLandmarks]]를 이용해서 현재 시점에 발견 안 된 landmark들 `lmdb`에서 제거.
 
-[[#optimize_and_marg]]
+[[#optimize_and_marg]](`num_points_connected, lost_landmarks`)
+- `num_points_connected`는 landmark 중에서 host_keyframe 빈도수를 나타낸 거.
 
+visualize를 위해 
 
-
-### op
+### optimize_and_marg
 
 ## IntegratedImuMeasurement
 preintegration.h에 있음.
