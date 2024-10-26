@@ -14,7 +14,9 @@ source :
 
 ---
 ### Critique
-- 
+#### SRIF의 Contribution
+- A fast marginalization algorithm that leverages sparsity
+- update using the Cholesky LS solver
 
 ### Introduction
 현재 VINS 알고리즘들은 *information matrix*를 포함한 방정식을 풀 때 numerical stability를 위해 QR decomposition (float32)를 이용해 풀곤했다. 
