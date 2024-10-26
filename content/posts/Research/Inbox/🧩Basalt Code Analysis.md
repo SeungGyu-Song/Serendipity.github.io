@@ -160,6 +160,9 @@ visualize를 위해 작업하는 거
 ### optimize
 [[#AbsOrderMap]] aom 이라는 local 변수 선언 
 
+`frame_poses`와 `frame_states`의 각 시점에 대해 각 변수의 사이즈를 `aom.abs_order_map`에 넣어줌. → 나중에 행렬 indexing하려고 하는 거 같음.
+
+
 
 ## IntegratedImuMeasurement
 preintegration.h에 있음.
@@ -335,9 +338,11 @@ struct
 struct
 
 - `std::map<int64_t, std::pair<int, int>>` abs_order_map
+	- 시간, (aom.total_size, POSE_SIZE같은 거)
 - `size_t` items
 - `size_t` total_size
-- 
+
+아 이걸로 행렬 indexing 하나보다
 
 # Pangolin
 ### ManagedImage
