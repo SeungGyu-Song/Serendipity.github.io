@@ -151,7 +151,7 @@ visualize를 위해 작업하는 거
 - `frame_poses`의 값들을 data→frames에 넣기
 - [[#BundleAdjustmentBase#get_current_points|ba_base::get_current_points]] (`data->points, data->point_ids`) : points에는 landmark의 3차원 위치, point_ids에는 3차원 복원했다는 의미로 1을 emplace_back
 
-### optimize_and_marg
+### optimize_and_margframe_states
 [[#optimize]]
 [[#marginalize]](`num_points_connected, lost_landmarks`)
 

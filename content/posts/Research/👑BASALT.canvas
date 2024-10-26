@@ -34,7 +34,8 @@
 		{"id":"fa0ae121070408af","x":3451,"y":2588,"width":442,"height":163,"type":"text","text":"#### [[🧩Basalt Code Analysis#marginalize|marginalize]](num_points_connected, lost_landmarks)"},
 		{"id":"7ec327c4d3513c30","type":"text","text":"#### 해당 observation이 lmdb에 있다면\n","x":2160,"y":1328,"width":400,"height":60},
 		{"id":"5942c5bca9d7ebc6","type":"text","text":"#### [[🧩Basalt Code Analysis#basalt#factory_helper|VioEsimatorBase::factory_helper]]\n\n\nSqrtKeypointVioEstimator를 return","x":140,"y":-352,"width":401,"height":98},
-		{"id":"5542e803c0c3a72f","type":"text","text":"#### [[🧩Basalt Code Analysis#optimize|optimize]] ()\n","x":3542,"y":2142,"width":260,"height":152}
+		{"id":"5542e803c0c3a72f","type":"text","text":"#### [[🧩Basalt Code Analysis#optimize|optimize]] ()\n","x":3542,"y":2142,"width":260,"height":152},
+		{"id":"eaa58a0e693001fd","x":4036,"y":1981,"width":304,"height":99,"type":"text","text":"`frame_states` :  일반 frame\n`frame_poses` : keyframe\n 맞나?"}
 	],
 	"edges":[
 		{"id":"bc70900eb7eac5c0","fromNode":"67eb4a08deedd196","fromSide":"right","toNode":"5942c5bca9d7ebc6","toSide":"left"},
