@@ -162,6 +162,9 @@ visualize를 위해 작업하는 거
 
 `frame_poses`와 `frame_states`의 각 시점에 대해 각 변수의 사이즈를 `aom.abs_order_map`에 넣어줌. → 나중에 행렬 indexing하려고 하는 거 같음.
 
+두 local 변수 선언
+typename `LinearizationBase<Scalar, POSE_SIZE>::Options` lqr_options
+std::unique_ptr`<LinearizationBase<Scalar, POSE_SIZE>>` lqr
 
 
 ## IntegratedImuMeasurement
@@ -334,6 +337,7 @@ struct
 - [[#FeatureTrack]] outlier_obs
 
 ## imu_types.h
+[[🧩Basalt pose class hierarchy]]참고.
 ### AbsOrderMap
 struct
 
@@ -343,6 +347,13 @@ struct
 - `size_t` total_size
 
 아 이걸로 행렬 indexing 하나보다
+
+### ImuLinData
+struct
+
+`const Eigen::Matrix<Scalar, 3, 1>` & g, & gyro_bias_weight_sqrt, &accel_bias_weight_sqrt
+
+`std::map<int64_t, const `[[#IntegratedImuMeasurement]]`<Scalar>*>`
 
 # Pangolin
 ### ManagedImage
