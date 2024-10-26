@@ -6,6 +6,8 @@
 ## BundleAdjustmentBase
 [[#LandmarkDatabase]](Scalar) lmdb
 
+`Eigen::aligned_map<int64_t, `[[🧩Basalt pose class hierarchy#PoseVelBiasStateWithLin|PoseVelBiasStateWithLin]]`<Scalar>>` frame_states
+`Eigen::aligned_map<int64_t,` [[🧩Basalt pose class hierarchy#PoseStatewithLin|PoseStatewithLin]]`<Scalar>>` frame_poses
 
 ## SqrtBundleAdjustmentBase
 <span style="color: brown">public <span style="color: blue">BundleAdjustmentBase</span></span>

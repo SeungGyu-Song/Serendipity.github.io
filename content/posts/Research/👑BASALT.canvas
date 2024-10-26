@@ -2,7 +2,6 @@
 	"nodes":[
 		{"id":"933716d538ecf49a","type":"group","x":847,"y":-631,"width":2053,"height":631,"color":"3","label":"Visual Frontend"},
 		{"id":"45521583dd7b9936","type":"group","x":929,"y":294,"width":1138,"height":439,"color":"4","label":"IMU Preintegration"},
-		{"id":"f5b93a34a2e38b14","x":4516,"y":2180,"width":400,"height":400,"type":"file","file":"Research/Inbox/🧩Basalt pose class hierarchy.md"},
 		{"id":"67eb4a08deedd196","type":"text","text":"#### [[🧩Basalt Code Analysis#getVioEstimator|VioEstimatorFactory::getVioEstimator]]\n","x":-320,"y":-340,"width":271,"height":73},
 		{"id":"0a384a653ff50e98","type":"text","text":"#### [[🍯 shared_ptr 축약어 꿀팁]]","x":277,"y":-803,"width":363,"height":63},
 		{"id":"969322d6d043be67","type":"text","text":"#### [[🧩Basalt Code Analysis#getOpticalFlow|OpticalFlowFactory::getOpticalFlow]]\n","x":-414,"y":-600,"width":460,"height":71},
@@ -36,7 +35,8 @@
 		{"id":"40ec47e6c0d0f365","type":"text","text":"#### lmdb에 있는 feature보다 새 feature가 더 많다면 → keyframe으로 간주.\n\n#### [[🧩Basalt Code Analysis#measure#Triangulate 진행|Triangulation 진행]]\n근데 depth가 0, 3.0 사이로 계산된 것만 landmark로 보고, 이 feature의 과거 좌표들을 `lmdb`에 담아준다. ([[🧩Basalt Code Analysis#addObservation|LandmarkDatabase::addObservation]])","x":2740,"y":1688,"width":500,"height":260},
 		{"id":"fa0ae121070408af","type":"text","text":"#### [[🧩Basalt Code Analysis#marginalize|marginalize]](num_points_connected, lost_landmarks)","x":3451,"y":2588,"width":442,"height":163},
 		{"id":"5542e803c0c3a72f","type":"text","text":"#### [[🧩Basalt Code Analysis#optimize|optimize]] ()\n","x":3542,"y":2142,"width":260,"height":152},
-		{"id":"eaa58a0e693001fd","type":"text","text":"`frame_states` :  일반 frame\n`frame_poses` : keyframe\n 맞나?","x":4036,"y":1981,"width":304,"height":99}
+		{"id":"f5b93a34a2e38b14","x":4516,"y":2180,"width":704,"height":1260,"type":"file","file":"Research/Inbox/🧩Basalt pose class hierarchy.md"},
+		{"id":"eaa58a0e693001fd","type":"text","text":"`frame_states` :  일반 frame [[🧩Basalt pose class hierarchy#PoseVelBiasStateWithLin|PoseVelBiasStateWithLin]] \n`frame_poses` : keyframe [[🧩Basalt pose class hierarchy#PoseStatewithLin|PoseStatewithLin]]\n 맞나?","x":4596,"y":1960,"width":544,"height":133}
 	],
 	"edges":[
 		{"id":"bc70900eb7eac5c0","fromNode":"67eb4a08deedd196","fromSide":"right","toNode":"5942c5bca9d7ebc6","toSide":"left"},
