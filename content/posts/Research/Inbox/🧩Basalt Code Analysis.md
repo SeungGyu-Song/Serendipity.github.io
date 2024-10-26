@@ -166,6 +166,15 @@ visualize를 위해 작업하는 거
 typename `LinearizationBase<Scalar, POSE_SIZE>::Options` lqr_options
 std::unique_ptr`<LinearizationBase<Scalar, POSE_SIZE>>` lqr
 
+[[#imu_types.h#ImuLindata|ImuLinData]]`<Scalar>` ild 변수 선언
+preintegration 결과인  `imu_meas`를 `ild.imu_meas[kv.first]`에 저장
+
+ `error_total` = [[#linearizeProblem|lqr→linearizeProblem]](&numerically_valid)
+
+## LinearizationBase
+## LinearizationAbsQr
+public 
+
 
 ## IntegratedImuMeasurement
 preintegration.h에 있음.
@@ -353,7 +362,7 @@ struct
 
 `const Eigen::Matrix<Scalar, 3, 1>` & g, & gyro_bias_weight_sqrt, &accel_bias_weight_sqrt
 
-`std::map<int64_t, const `[[#IntegratedImuMeasurement]]`<Scalar>*>`
+`std::map<int64_t, const `[[#IntegratedImuMeasurement]]`<Scalar>*>` imu_meas
 
 # Pangolin
 ### ManagedImage
