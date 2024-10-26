@@ -170,6 +170,9 @@ std::unique_ptr`<LinearizationBase<Scalar, POSE_SIZE>>` lqr
 preintegration 결과인  `imu_meas`를 `ild.imu_meas[kv.first]`에 저장
 
  `error_total` = [[#linearizeProblem|lqr→linearizeProblem]](&numerically_valid)
+[[#LinearizationAbsQr#performQR|lqr→performQR]]()
+[[#LinearizationAbsQr#get_dense_H_b|lqr→get_dense_H_b]](H, b)
+
 
 ## LinearizationBase
 ## LinearizationAbsQr
