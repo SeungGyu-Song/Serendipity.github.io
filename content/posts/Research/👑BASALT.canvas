@@ -35,7 +35,10 @@
 		{"id":"7ec327c4d3513c30","type":"text","text":"#### 해당 observation이 lmdb에 있다면\n","x":2160,"y":1328,"width":400,"height":60},
 		{"id":"5942c5bca9d7ebc6","type":"text","text":"#### [[🧩Basalt Code Analysis#basalt#factory_helper|VioEsimatorBase::factory_helper]]\n\n\nSqrtKeypointVioEstimator를 return","x":140,"y":-352,"width":401,"height":98},
 		{"id":"5542e803c0c3a72f","type":"text","text":"#### [[🧩Basalt Code Analysis#optimize|optimize]] ()\n","x":3542,"y":2142,"width":260,"height":152},
-		{"id":"eaa58a0e693001fd","x":4036,"y":1981,"width":304,"height":99,"type":"text","text":"`frame_states` :  일반 frame\n`frame_poses` : keyframe\n 맞나?"}
+		{"id":"eaa58a0e693001fd","x":4036,"y":1981,"width":304,"height":99,"type":"text","text":"`frame_states` :  일반 frame\n`frame_poses` : keyframe\n 맞나?"},
+		{"id":"a3a048a3f0c2c4f5","x":4131,"y":2359,"width":249,"height":141,"type":"text","text":"##### PoseState\n- t_ns\n- T_w_i"},
+		{"id":"534641b9344b2382","x":3980,"y":2700,"width":500,"height":402,"type":"text","text":"# PoseVelBiasStateWithLin\n- `using` [[#PoseVelBiasState]]::VecN\n\n- `bool` linearized\n- \n##### PoseVelBiasState\n- bias_gyro\n- bias_accel"},
+		{"id":"dc4558985c2d6f9e","x":4188,"y":2563,"width":252,"height":77,"type":"text","text":"##### PoseVelState\n- vel_w_i"}
 	],
 	"edges":[
 		{"id":"bc70900eb7eac5c0","fromNode":"67eb4a08deedd196","fromSide":"right","toNode":"5942c5bca9d7ebc6","toSide":"left"},

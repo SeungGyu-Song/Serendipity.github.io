@@ -28,6 +28,7 @@ source :
 
 가장 효율적인 방식은 Cholesky 방식으로  least-squares 푸는 건데 float64가 필요하고 QR float32보다 효율적이지 않음.
 ### Methodology
+[Givens rotation 설명 블로그](https://kwokanthony.medium.com/detailed-explanation-with-example-on-qr-decomposition-by-givens-rotation-6e7bf664fbdd)
 
 
 ### Experiments
