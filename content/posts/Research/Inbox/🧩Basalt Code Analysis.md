@@ -173,7 +173,8 @@ preintegration 결과인  `imu_meas`를 `ild.imu_meas[kv.first]`에 저장
 
 ## LinearizationBase
 ## LinearizationAbsQr
-public 
+public [[#LinearizationBase]]`<Scalar_, POSE_SIZE_>`
+
 
 
 ## IntegratedImuMeasurement
