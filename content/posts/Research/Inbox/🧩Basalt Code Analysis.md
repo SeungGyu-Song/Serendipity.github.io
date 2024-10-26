@@ -138,14 +138,18 @@ triangulation 한 feature의 depth가 0과 3.0 사이에 있어야만
 
 `num_points_kf[opt_flow_meas->t_ns] = num_points_added` 
 - 각 시점별로 추가된 landmark 개수를 저장하는 변수.
-#### Triangulation 
+#### Triangulation 이후
 만약 config에서 `vio_marg_lost_landmarks`를 true로 해놓았다면
 - [[#LandmarkDatabase#getLandmarks|LandmarkDatabase::getLandmarks]]를 이용해서 현재 시점에 발견 안 된 landmark들 `lmdb`에서 제거.
 
 [[#optimize_and_marg]](`num_points_connected, lost_landmarks`)
 - `num_points_connected`는 landmark 중에서 host_keyframe 빈도수를 나타낸 거.
 
-visualize를 위해 
+visualize를 위해 작업하는 거
+- [[#VioVisualizationData]]::Ptr data (new VioVisualizationData)
+- `frame_states`의 값들을 data→states에 넣기
+- `frame_poses`의 값들을 data→frames에 넣기
+- [[#BundleAdjustmentBase#get_current_points|ba_base::get_gurrent_points]] (`data->points, data->point_ids`) : points에는 landmark의 3차원 위치, point_ids에는 3차원 복원했다는 의미로 1을 emplace_back
 
 ### optimize_and_marg
 
