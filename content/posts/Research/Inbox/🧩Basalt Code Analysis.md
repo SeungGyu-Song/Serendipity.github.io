@@ -126,9 +126,20 @@ triangulation 한 feature의 depth가 0과 3.0 사이에 있어야만
 - `lmdb.addLandmark(lm_id, kpt_pos)`로 landmark database에 넣어줌.
 - `valid_kp = true`
 
-`valid_kp`가 true인 feature들에 대해서
+`valid_kp`가 true인 feature들에 대해서 과거의 모든 위치를 넣어준다.
 `lmdb.addObservation(kv_obs.first, kv_obs.second)`
 
+`num_points_kf[opt_flow_meas->t_ns] = num_points_added` 
+- 각 시점별로 추가된 landmark 개수를 저장하는 변수.
+#### Triangulation 
+만약 config에서 `vio_marg_lost_landmarks`를 true로 해놓았다면
+- [[#LandmarkDatabase#getLandmarks|LandmarkDatabase::getLandmarks]]를 이용해서 현재 시점에 발견 안 된 landmark들 `lmdb`에서 제거.
+
+[[#optimize_and_marg]]
+
+
+
+### op
 
 ## IntegratedImuMeasurement
 preintegration.h에 있음.
