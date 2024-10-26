@@ -28,7 +28,8 @@
 		{"id":"392a55c07bebaeb4","x":1487,"y":760,"width":500,"height":60,"type":"text","text":"#### for loop : curr_frame의 observations "},
 		{"id":"7ec327c4d3513c30","x":2160,"y":760,"width":400,"height":60,"type":"text","text":"#### 해당 observation이 lmdb에 있다면\n"},
 		{"id":"4ea9359b895f954d","x":3160,"y":200,"width":371,"height":216,"type":"text","text":"### Common_types.h\n\n- #### [[🧩Basalt Code Analysis#TimeCamId|TimeCmaId]]\n- #### [[🧩Basalt Code Analysis#Landmark|Landmark]]\n- "},
-		{"id":"2aae5134bc099e64","x":2740,"y":660,"width":500,"height":261,"type":"text","text":"#### [[🧩Basalt Code Analysis#LandmarkDatabase#addObservation|LandmarkDatabse::addObservation]](tcid_target, kobs)\n로 LandmarkDatabase 안에 있는 변수 `kpts, observation` 업데이트.\n `kpts` : keypoint 당 host_keyframe 및 observations 모음\n `observations` : host_TimeCamid, 발견된 시점의 TimeCamId, feature id"}
+		{"id":"2aae5134bc099e64","x":2740,"y":660,"width":500,"height":261,"type":"text","text":"#### [[🧩Basalt Code Analysis#LandmarkDatabase#addObservation|LandmarkDatabse::addObservation]](tcid_target, kobs)\n로 LandmarkDatabase 안에 있는 변수 `kpts, observation` 업데이트.\n `kpts` : keypoint 당 host_keyframe 및 observations 모음\n `observations` : host_TimeCamid, 발견된 시점의 TimeCamId, feature id"},
+		{"id":"40ec47e6c0d0f365","x":2740,"y":1120,"width":500,"height":260,"type":"text","text":"#### lmdb에 있는 feature보다 새 feature가 더 많다면 → keyframe으로 간주.\n\n#### [[🧩Basalt Code Analysis#measure#Triangulate 진행|Triangulation 진행]]\n근데 depth가 0, 3.0 사이로 계산된 것만 landmark로 봄."}
 	],
 	"edges":[
 		{"id":"bc70900eb7eac5c0","fromNode":"67eb4a08deedd196","fromSide":"right","toNode":"5942c5bca9d7ebc6","toSide":"left"},
@@ -49,6 +50,7 @@
 		{"id":"d1b9a19c4775be6c","fromNode":"a60e1b6e647d667d","fromSide":"right","toNode":"663c83fe58c6bcb1","toSide":"left"},
 		{"id":"82399d0ff1bb41ff","fromNode":"663c83fe58c6bcb1","fromSide":"bottom","toNode":"392a55c07bebaeb4","toSide":"top"},
 		{"id":"36d51d1223450a20","fromNode":"392a55c07bebaeb4","fromSide":"right","toNode":"7ec327c4d3513c30","toSide":"left"},
-		{"id":"b5ab38b4a8450f00","fromNode":"7ec327c4d3513c30","fromSide":"right","toNode":"2aae5134bc099e64","toSide":"left"}
+		{"id":"b5ab38b4a8450f00","fromNode":"7ec327c4d3513c30","fromSide":"right","toNode":"2aae5134bc099e64","toSide":"left"},
+		{"id":"15de6187760d45c0","fromNode":"2aae5134bc099e64","fromSide":"bottom","toNode":"40ec47e6c0d0f365","toSide":"top"}
 	]
 }
