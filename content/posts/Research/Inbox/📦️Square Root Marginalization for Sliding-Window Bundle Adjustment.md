@@ -2,7 +2,7 @@
 aliases: 
 date: ""
 author: 
-draft: true
+draft: false
 URL:
 ---
 ## KeyIdea

@@ -2,7 +2,7 @@
 aliases: 
 date: 2024-10-24
 author: Jerry Hsiung
-draft: true
+draft: false
 URL:
 ---
 이거 [[📦️BASALT]]의 contribution과 상당히 유사하다.  mapping에 관련해서 그냥 sparsity를 사용한 듯. 

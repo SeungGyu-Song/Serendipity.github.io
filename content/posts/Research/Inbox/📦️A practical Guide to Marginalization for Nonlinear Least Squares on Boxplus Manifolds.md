@@ -5,7 +5,7 @@ title: A practical Guide to Marginalization for Nonlinear Least Squares on Boxpl
 URL: https://evanlev.github.io/marginalization.pdf
 tags:
   - Marginalization
-draft: true
+draft: false
 ---
 ### Critics
 - 이 지식을 왜 공부해야 했는지
