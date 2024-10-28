@@ -178,6 +178,8 @@ LM방식으로 $\delta x$ 구하기. : Cholesky 분해 사용해서.
 `backup()` 함수로 `states_frame`, `states_poses`, `lmdb` 백업해놓기. 
 - 주석에서는 increment 더하고 cost 줄어드는지 체크하는 거라고함.
 
+`inc = -inc` 후 [[#LinearizationAbsQr#backSubstitute|lqr→backSubstitute]](inc)
+
 ## LinearizationBase
 ## LinearizationAbsQr
 public [[#LinearizationBase]]`<Scalar_, POSE_SIZE_>`
